@@ -42,5 +42,8 @@ deploy:
   github-token: $GITHUB_TOKEN  
   keep-history: false  
   local-dir: public
+  # Workaround for travis-ci/travis-ci#9312
+  edge:
+    branch: pages-ivar-set
   on:
     branch: master
