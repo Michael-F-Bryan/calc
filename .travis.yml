@@ -32,13 +32,15 @@ before_deploy:
   - mkdir public
   - cp -r target/doc public/
   - cp -r target/book public/
-  - echo "<meta http-equiv=refresh content=0;url=book/index.html>" > public/index.html
+  - pwd
+  - ls
+  - echo "<meta http-equiv=refresh content=0;url=book/html/index.html>" > public/index.html
 
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  
-  keep-history: false  
+  keep-history: true  
   local-dir: public
   on:
     branch: master

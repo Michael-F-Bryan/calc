@@ -8,5 +8,5 @@ Create your own JIT compiled calculator in Rust using [inkwell].
 
 
 [inkwell]: https://github.com/TheDan64/inkwell
-[rendered book]: michael-f-bryan.github.io/calc/index.html
-[api docs]: michael-f-bryan.github.io/calc/doc/calc/index.html
+[rendered book]: https://michael-f-bryan.github.io/calc/
+[api docs]: https://michael-f-bryan.github.io/calc/doc/calc/index.html
