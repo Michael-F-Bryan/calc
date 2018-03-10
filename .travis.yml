@@ -4,6 +4,11 @@ cache:
   - apt
   - cargo
 
+addons:
+  apt:
+    packages:
+      - llvm-3.7-dev
+
 install:
   - command -q mdbook >/dev/null 2>&1 || cargo install mdbook
   - command -q mdbook-linkcheck >/dev/null 2>&1 || cargo install mdbook-linkcheck

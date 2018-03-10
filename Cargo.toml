@@ -4,3 +4,5 @@ version = "0.1.0"
 authors = ["Michael Bryan <michaelfbryan@gmail.com>"]
 
 [dependencies]
+inkwell = { git = "https://github.com/TheDan64/inkwell", features = ["llvm3-7"] }
+failure = "0.1.1"
