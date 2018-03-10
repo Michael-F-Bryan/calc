@@ -6,8 +6,17 @@ cache:
 
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.7
     packages:
       - llvm-3.7-dev
+      - libelf-dev
+      - lib32z1-dev
+      - libedit-dev
+      - libdw-dev
+      - binutils-dev
+      - libiberty-dev      
 
 install:
   - command -q mdbook >/dev/null 2>&1 || cargo install mdbook
