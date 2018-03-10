@@ -19,8 +19,8 @@ addons:
       - libiberty-dev      
 
 install:
-  - command -q mdbook >/dev/null 2>&1 || cargo install mdbook
-  - command -q mdbook-linkcheck >/dev/null 2>&1 || cargo install mdbook-linkcheck
+  - command -v mdbook >/dev/null 2>&1 || cargo install mdbook
+  - command -v mdbook-linkcheck >/dev/null 2>&1 || cargo install mdbook-linkcheck
 
 script:
   - cargo build --verbose
