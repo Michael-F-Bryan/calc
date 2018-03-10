@@ -1,0 +1,10 @@
+[book]
+title = "Rusty Calc"
+authors = ["Michael-F-Bryan"]
+src = "src"
+
+[output.html]
+[output.linkcheck]
+
+[build]
+build-dir = "../target/book"
