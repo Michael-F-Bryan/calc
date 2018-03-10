@@ -12,3 +12,6 @@ regex = "0.2.7"
 
 [build-dependencies]
 lalrpop = "0.14.0"
+
+[dev-dependencies]
+pretty_assertions = "0.5.1"
