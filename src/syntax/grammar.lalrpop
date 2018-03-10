@@ -11,21 +11,13 @@ pub Expr: Expr = {
 Factor: Expr = {
     <l:Factor> "*" <r:Atom> => BinaryOp::mult(l, r.into()).into(),
     <l:Factor> "/" <r:Atom> => BinaryOp::div(l, r.into()).into(),
+    "(" <e:Expr> ")" => e,
     <f:FunctionCall> => f.into(),
     <a:Atom> => a.into(),
 };
 
 pub FunctionCall: FunctionCall = {
     <i:ident> "(" <a:CommaSeparated<Expr>> ")" => FunctionCall::new(i, a),
-};
-
-pub Atom: Atom = {
-    <s:r"[0-9]+(\.[0-9]+)?"> => Atom::Number(s.parse().unwrap()),
-    <i:ident> => Atom::Ident(i),
-};
-
-ident: String = {
-    <i:r"[a-zA-Z][a-zA-Z0-9_-]*"> => i.to_string(),
 };
 
 CommaSeparated<T>: Vec<T> = { 
@@ -37,4 +29,17 @@ CommaSeparated<T>: Vec<T> = {
             v
         }
     }
+};
+
+pub Atom: Atom = {
+    num => Atom::Number(<>),
+    ident => Atom::Ident(<>),
+};
+
+num: f64 = {
+    <s:r"[0-9]+(\.[0-9]+)?"> => s.parse().unwrap(),
+};
+
+ident: String = {
+    <i:r"[a-zA-Z][a-zA-Z0-9_-]*"> => i.to_string(),
 };

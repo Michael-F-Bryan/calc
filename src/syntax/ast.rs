@@ -25,35 +25,35 @@ impl From<FunctionCall> for Expr {
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct BinaryOp {
-    pub op: BinaryOpKind,
+    pub op: Op,
     pub left: Expr,
     pub right: Expr,
 }
 
 impl BinaryOp {
-    pub fn new( left: Expr, right: Expr, op: BinaryOpKind) -> BinaryOp {
+    pub fn new( left: Expr, right: Expr, op: Op) -> BinaryOp {
         BinaryOp { left, right, op }
     }
 
     pub fn add(left: Expr, right: Expr) -> BinaryOp {
-        BinaryOp::new(left, right, BinaryOpKind::Add)
+        BinaryOp::new(left, right, Op::Add)
     }
 
     pub fn sub(left: Expr, right: Expr) -> BinaryOp {
-        BinaryOp::new(left, right, BinaryOpKind::Subtract)
+        BinaryOp::new(left, right, Op::Subtract)
     }
 
     pub fn mult(left: Expr, right: Expr) -> BinaryOp {
-        BinaryOp::new(left, right, BinaryOpKind::Multiply)
+        BinaryOp::new(left, right, Op::Multiply)
     }
 
     pub fn div(left: Expr, right: Expr) -> BinaryOp {
-        BinaryOp::new(left, right, BinaryOpKind::Divide)
+        BinaryOp::new(left, right, Op::Divide)
     }
 }
 
 #[derive(Debug, Clone, Copy, PartialEq)]
-pub enum BinaryOpKind {
+pub enum Op {
     Add,
     Divide,
     Multiply,
@@ -148,6 +148,24 @@ mod tests {
         let should_be = FunctionCall::new("sin", vec![Expr::Atom(Atom::Number(90.0))]);
 
         let got = grammar::parse_FunctionCall(src).unwrap();
+        assert_eq!(got, should_be);
+    }
+
+    #[test]
+    fn complex_parse_tree() {
+        let src = "5 + (3-2) * x - sin(90.0)";
+        let should_be = BinaryOp::sub(
+            BinaryOp::add(Atom::from(5).into(),
+                BinaryOp::mult(
+                    BinaryOp::sub(Atom::from(3).into(), Atom::from(2).into()).into(),
+                    Atom::from("x").into(),
+                ).into()).into(),
+                FunctionCall::new("sin", vec![Atom::Number(90.0).into()]).into()
+        );
+        let should_be = Expr::from(should_be);
+
+        let got = grammar::parse_Expr(src).unwrap();
+
         assert_eq!(got, should_be);
     }
 }
