@@ -1,4 +1,9 @@
-// #![deny(missing_docs, missing_debug_implementations, missing_copy_implementations)]
+//! A JIT compiler written in Rust, using LLVM and [inkwell].
+//!
+//! [inkwell]: https://github.com/TheDan64/inkwell
+
+
+#![deny(missing_docs, missing_debug_implementations, missing_copy_implementations)]
 
 extern crate failure;
 extern crate inkwell;

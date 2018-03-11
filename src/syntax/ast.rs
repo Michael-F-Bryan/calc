@@ -1,7 +1,11 @@
+/// A `calc` expression.
 #[derive(Debug, Clone, PartialEq)]
 pub enum Expr {
+    /// A `FunctionCall` node.
     FunctionCall(FunctionCall),
+    /// An `Atom` node.
     Atom(Atom),
+    /// A `BinaryOp` node.
     BinaryOp(Box<BinaryOp>),
 }
 
@@ -23,46 +27,63 @@ impl From<FunctionCall> for Expr {
     }
 }
 
+/// A binary operation.
 #[derive(Debug, Clone, PartialEq)]
 pub struct BinaryOp {
+    /// What kind of operation is this?
     pub op: Op,
+    /// The left operand.
     pub left: Expr,
+    /// The right operand.
     pub right: Expr,
 }
 
 impl BinaryOp {
+    /// Create a new `BinaryOp`.
     pub fn new( left: Expr, right: Expr, op: Op) -> BinaryOp {
         BinaryOp { left, right, op }
     }
 
+    /// Create an addition operation.
     pub fn add(left: Expr, right: Expr) -> BinaryOp {
         BinaryOp::new(left, right, Op::Add)
     }
 
+    /// Create a subtract operation.
     pub fn sub(left: Expr, right: Expr) -> BinaryOp {
         BinaryOp::new(left, right, Op::Subtract)
     }
 
+    /// Create a multiplication operation.
     pub fn mult(left: Expr, right: Expr) -> BinaryOp {
         BinaryOp::new(left, right, Op::Multiply)
     }
 
+    /// Create a division operation.
     pub fn div(left: Expr, right: Expr) -> BinaryOp {
         BinaryOp::new(left, right, Op::Divide)
     }
 }
 
+/// The kind of operation in a `BinaryOp`.
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum Op {
+    /// Addition.
     Add,
+    /// Division.
     Divide,
+    /// Multiplication.
     Multiply,
+    /// Subtraction.
     Subtract,
 }
 
+/// The most basic construct in the language.
 #[derive(Debug, Clone, PartialEq)]
 pub enum Atom {
+    /// A floating point literal.
     Number(f64),
+    /// An identifier (e.g. `foo`).
     Ident(String),
 }
 
@@ -90,13 +111,17 @@ impl From<i32> for Atom {
     }
 }
 
+/// A function call.
 #[derive(Debug, Clone, PartialEq)]
 pub struct FunctionCall {
+    /// The function being called.
     pub name: String,
+    /// The list of arguments passed to the function call.
     pub arguments: Vec<Expr>,
 }
 
 impl FunctionCall {
+    /// Create a new `FunctionCall`.
     pub fn new<S, A>(name: S, args: A) -> FunctionCall 
     where S: Into<String>,
     A: IntoIterator<Item=Expr>,
