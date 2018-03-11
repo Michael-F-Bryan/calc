@@ -15,8 +15,10 @@ use slog::Logger;
 use syntax::visit::Visitor;
 
 pub fn translate(ast: &Expr, ctx: &Context, logger: &Logger) -> Result<Module, Error> {
-    let mut c = Compiler::new_with_logger(ctx, logger);
-    c.visit_expr(ast);
+    info!(logger, "Starting the compilation phase");
+
+    let c = Compiler::new_with_logger(ctx, logger);
+    c.compile(ast);
 
     unimplemented!()
 }
