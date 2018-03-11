@@ -1,4 +1,10 @@
 //! A JIT compiler written in Rust, using LLVM and [inkwell].
+//! 
+//! To run JIT compiled code, the compiler goes through several phases:
+//! 
+//! 1. Parse the source code into an AST (Abstract Syntax Tree)
+//! 2. Translate the AST into its equivalent LLVM IR
+//! 3. JIT compile the LLVM IR
 //!
 //! [inkwell]: https://github.com/TheDan64/inkwell
 

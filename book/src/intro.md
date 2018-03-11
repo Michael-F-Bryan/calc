@@ -1,7 +1,7 @@
 # Introduction
 
-This is a tutorial on using LLVM and the [inkwell] crate to write a JIT compiled 
-calculator in Rust.
+This is an introduction to using LLVM and the [inkwell] crate to write a JIT
+compiled calculator in Rust.
 
 ## Roadmap
 
@@ -27,7 +27,6 @@ To do this, our calculator will need to run several phases
 
 For simplicity of implementation, the only data type our language will know
 about is the `double` (a 64-bit floating point number).
-
 
 [inkwell]: https://github.com/TheDan64/inkwell
 [Abstract Syntax Tree]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
