@@ -4,21 +4,20 @@ use slog::{Discard, Logger};
 use inkwell::context::Context;
 use inkwell::module::Module;
 use inkwell::builder::Builder;
-use inkwell::values::FloatValue;
+use inkwell::values::{FloatValue, FunctionValue};
 use inkwell::types::FloatType;
 use inkwell::execution_engine::ExecutionEngine;
 use failure::Error;
 
-use syntax::visit::{self, Visitor};
-use syntax::{Atom, BinaryOp, Expr};
+use syntax::{Atom, BinaryOp, Expr, FunctionCall};
+
+pub const CALC_ENTRYPOINT: &str = "calc_main";
 
 pub struct Compiler<'ctx> {
     ctx: &'ctx Context,
     logger: Logger,
     builder: Builder,
-    module: Module,
     double: FloatType,
-    stack: Vec<FloatValue>,
 }
 
 impl<'ctx> Compiler<'ctx> {
@@ -30,44 +29,62 @@ impl<'ctx> Compiler<'ctx> {
         let logger = logger.new(o!("phase" => "trans"));
 
         let double = ctx.f64_type();
-        let stack = Vec::new();
 
         let builder = ctx.create_builder();
-        let module = ctx.create_module("calc");
-
-        // the calc_main function has a hard-coded signature
-        let sig = double.fn_type(&[], false);
-        let calc_main = module.add_function("calc_main", &sig, None);
-
-        // position the builder at the start of our `entry` block
-        let entry = calc_main.append_basic_block("entry");
-        builder.position_at_end(&entry);
 
         Compiler {
             ctx,
             builder,
-            module,
             logger,
             double,
-            stack,
         }
     }
 
-    pub fn compile(mut self, ast: &Expr) -> Module {
-        self.visit_expr(ast);
+    /// Compile an AST tree to a LLVM `Module`.
+    pub fn compile(&self, ast: &Expr) -> Module {
+        let mut module = self.ctx.create_module("calc");
 
-        // the stack should have just one value on it. This is what we'll
-        // return from calc_main
-        assert_eq!(
-            self.stack.len(),
-            1,
-            "The return stack should have just one element. This is a bug."
-        );
+        self.compile_function(&mut module, CALC_ENTRYPOINT, ast);
 
-        let ret = self.stack.pop().unwrap();
+        module
+    }
+
+    fn compile_function(&self, module: &mut Module, name: &str, body: &Expr) -> FunctionValue {
+        // hard-code all functions to be `fn() -> f64`
+        let sig = self.double.fn_type(&[], false);
+        let func = module.add_function(name, &sig, None);
+
+        let entry = func.append_basic_block("entry");
+        self.builder.position_at_end(&entry);
+
+        let ret = self.compile_expr(body);
+
         self.builder.build_return(Some(&ret));
 
-        self.module.clone()
+        func
+    }
+
+    fn compile_expr(&self, expr: &Expr) -> FloatValue {
+        match *expr {
+            Expr::Atom(ref atom) => self.compile_atom(atom),
+            Expr::BinaryOp(ref op) => self.compile_binary_op(op),
+            Expr::FunctionCall(ref call) => self.compile_function_call(call),
+        }
+    }
+
+    fn compile_atom(&self, atom: &Atom) -> FloatValue {
+        match *atom {
+            Atom::Number(n) => self.double.const_float(n),
+            _ => unimplemented!(),
+        }
+    }
+
+    fn compile_binary_op(&self, op: &BinaryOp) -> FloatValue {
+        unimplemented!()
+    }
+
+    fn compile_function_call(&self, call: &FunctionCall) -> FloatValue {
+        unimplemented!()
     }
 }
 
@@ -76,21 +93,8 @@ impl<'ctx> Debug for Compiler<'ctx> {
         f.debug_struct("Compiler")
             .field("ctx", self.ctx)
             .field("logger", &self.logger)
-            .field("module", &self.module)
             .field("double", &self.double)
-            .field("stack", &self.stack)
             .finish()
-    }
-}
-
-impl<'ctx> Visitor for Compiler<'ctx> {
-    fn visit_atom(&mut self, a: &Atom) {
-        let inst = match *a {
-            Atom::Number(n) => self.double.const_float(n),
-            Atom::Ident(ref id) => unimplemented!("You can't use variables just yet!"),
-        };
-
-        self.stack.push(inst);
     }
 }
 
@@ -118,15 +122,15 @@ mod tests {
 
         assert_eq!(last_inst.get_opcode(), InstructionOpcode::Return);
 
-        // let ee = got.create_jit_execution_engine(OptimizationLevel::None)
-        //     .unwrap();
+        let ee = got.create_jit_execution_engine(OptimizationLevel::None)
+            .unwrap();
 
         unsafe {
-            // let func_addr = ee.get_function_address("calc_main").unwrap();
-            // let func: *const fn() -> f64 = mem::transmute(func_addr as usize);
+            let func_addr = ee.get_function_address("calc_main").unwrap();
+            let func: *const fn() -> f64 = mem::transmute(func_addr as usize);
 
-            // let got = (*func)();
-            // assert_eq!(got, should_be);
+            let got = (*func)();
+            assert_eq!(got, should_be);
         }
     }
 }
