@@ -16,8 +16,11 @@ into the `calc_main()` function to execute everything. It also means it's quite
 trivial to compile the program into a shared library (`*.so` or DLL) so other
 programs can call it.
 
-This conversion process is done by using the `Visitor` trait defined [earlier]
-to recursively walk the AST, generating LLVM instructions for each node.
+This conversion process is done by recursively walking the parsed AST, turning 
+each node into the corresponding LLVM instruction(s). 
+
+Later on, the `Visitor` trait will be used to do some minor type-checking by
+looking for variables uses/assignments and function calls.
 
 [`Module`]: http://llvm.org/doxygen/classllvm_1_1Module.html#details
 [earlier]: parse/visit.html
