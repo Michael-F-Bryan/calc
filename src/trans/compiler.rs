@@ -1,13 +1,13 @@
+use failure::Error;
+use inkwell::builder::Builder;
+use inkwell::context::Context;
+use inkwell::execution_engine::ExecutionEngine;
+use inkwell::module::Module;
+use inkwell::types::FloatType;
+use inkwell::values::{FloatValue, FunctionValue};
+use slog::{Discard, Logger};
 use std::fmt::{self, Debug, Formatter};
 use std::mem;
-use slog::{Discard, Logger};
-use inkwell::context::Context;
-use inkwell::module::Module;
-use inkwell::builder::Builder;
-use inkwell::values::{FloatValue, FunctionValue};
-use inkwell::types::FloatType;
-use inkwell::execution_engine::ExecutionEngine;
-use failure::Error;
 
 use syntax::{Atom, BinaryOp, Expr, FunctionCall};
 
@@ -101,18 +101,19 @@ impl<'ctx> Debug for Compiler<'ctx> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use inkwell::values::InstructionOpcode;
     use inkwell::OptimizationLevel;
+    use inkwell::targets::{InitializationConfig, Target};
+    use inkwell::values::InstructionOpcode;
 
     #[test]
     fn compile_a_single_instruction() {
+        Target::initialize_native(&InitializationConfig::default()).unwrap();
+
         let should_be = 3.14;
         let src = Expr::Atom(Atom::Number(should_be));
 
         let ctx = Context::create();
         let got = Compiler::new(&ctx).compile(&src);
-
-        got.print_to_stderr();
 
         let calc_main = got.get_function("calc_main").unwrap();
         assert_eq!(calc_main.count_basic_blocks(), 1);
@@ -127,9 +128,10 @@ mod tests {
 
         unsafe {
             let func_addr = ee.get_function_address("calc_main").unwrap();
-            let func: *const fn() -> f64 = mem::transmute(func_addr as usize);
+            assert_ne!(func_addr, 0);
+            let func: fn() -> f64 = mem::transmute(func_addr as usize);
 
-            let got = (*func)();
+            let got = func();
             assert_eq!(got, should_be);
         }
     }
