@@ -18,10 +18,12 @@ Next we tell `lalrpop` that the grammar section has started
 grammar;
 ```
 
-Our grammar has roughly two levels of precedence, so that means we create two 
-rules for working with arithmetic expressions.
+Our grammar is composed of *expressions* which are built up from a bunch of
+*factors* and *terms*. This lets us quite naturally break the grammar up into
+three rules.
 
 ```rust
+
 pub Expr: Expr = {
     <l:Expr> "+" <r:Factor> => BinaryOp::add(l, r).into(),
     <l:Expr> "-" <r:Factor> => BinaryOp::sub(l, r).into(),
@@ -29,11 +31,15 @@ pub Expr: Expr = {
 };
 
 Factor: Expr = {
-    <l:Factor> "*" <r:Atom> => BinaryOp::mult(l, r.into()).into(),
-    <l:Factor> "/" <r:Atom> => BinaryOp::div(l, r.into()).into(),
+    <l:Factor> "*" <r:Term> => BinaryOp::mult(l, r).into(),
+    <l:Factor> "/" <r:Term> => BinaryOp::div(l, r).into(),
+    Term,
+};
+
+Term: Expr = {
     "(" <e:Expr> ")" => e,
+    Atom => Expr::Atom(<>),
     <f:FunctionCall> => f.into(),
-    <a:Atom> => a.into(),
 };
 ```
 

@@ -9,11 +9,15 @@ pub Expr: Expr = {
 };
 
 Factor: Expr = {
-    <l:Factor> "*" <r:Atom> => BinaryOp::mult(l, r.into()).into(),
-    <l:Factor> "/" <r:Atom> => BinaryOp::div(l, r.into()).into(),
+    <l:Factor> "*" <r:Term> => BinaryOp::mult(l, r).into(),
+    <l:Factor> "/" <r:Term> => BinaryOp::div(l, r).into(),
+    Term,
+};
+
+Term: Expr = {
     "(" <e:Expr> ")" => e,
+    Atom => Expr::Atom(<>),
     <f:FunctionCall> => f.into(),
-    <a:Atom> => a.into(),
 };
 
 pub FunctionCall: FunctionCall = {
