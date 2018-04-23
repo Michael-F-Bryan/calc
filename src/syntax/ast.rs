@@ -40,7 +40,7 @@ pub struct BinaryOp {
 
 impl BinaryOp {
     /// Create a new `BinaryOp`.
-    pub fn new( left: Expr, right: Expr, op: Op) -> BinaryOp {
+    pub fn new(left: Expr, right: Expr, op: Op) -> BinaryOp {
         BinaryOp { left, right, op }
     }
 
@@ -122,17 +122,17 @@ pub struct FunctionCall {
 
 impl FunctionCall {
     /// Create a new `FunctionCall`.
-    pub fn new<S, A>(name: S, args: A) -> FunctionCall 
-    where S: Into<String>,
-    A: IntoIterator<Item=Expr>,
-        {
+    pub fn new<S, A>(name: S, args: A) -> FunctionCall
+    where
+        S: Into<String>,
+        A: IntoIterator<Item = Expr>,
+    {
         FunctionCall {
             name: name.into(),
-            arguments: args.into_iter().collect(), 
+            arguments: args.into_iter().collect(),
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -144,7 +144,7 @@ mod tests {
         let src = "3.14";
         let should_be = Atom::Number(3.14);
 
-        let got = grammar::parse_Atom(src).unwrap();
+        let got = grammar::AtomParser::new().parse(src).unwrap();
         assert_eq!(got, should_be);
     }
 
@@ -153,17 +153,20 @@ mod tests {
         let src = "x";
         let should_be = Atom::Ident(String::from(src));
 
-        let got = grammar::parse_Atom(src).unwrap();
+        let got = grammar::AtomParser::new().parse(src).unwrap();
         assert_eq!(got, should_be);
     }
 
     #[test]
     fn parse_a_multiply() {
         let src = "a * 5";
-        let should_be = BinaryOp::mult(Atom::Ident(String::from("a")).into(), Atom::Number(5.0).into());
+        let should_be = BinaryOp::mult(
+            Atom::Ident(String::from("a")).into(),
+            Atom::Number(5.0).into(),
+        );
         let should_be = Expr::from(should_be);
 
-        let got = grammar::parse_Expr(src).unwrap();
+        let got = grammar::ExprParser::new().parse(src).unwrap();
         assert_eq!(got, should_be);
     }
 
@@ -172,7 +175,7 @@ mod tests {
         let src = "sin(90.0)";
         let should_be = FunctionCall::new("sin", vec![Expr::Atom(Atom::Number(90.0))]);
 
-        let got = grammar::parse_FunctionCall(src).unwrap();
+        let got = grammar::FunctionCallParser::new().parse(src).unwrap();
         assert_eq!(got, should_be);
     }
 
@@ -180,16 +183,18 @@ mod tests {
     fn complex_parse_tree() {
         let src = "5 + (3-2) * x - sin(90.0)";
         let should_be = BinaryOp::sub(
-            BinaryOp::add(Atom::from(5).into(),
+            BinaryOp::add(
+                Atom::from(5).into(),
                 BinaryOp::mult(
                     BinaryOp::sub(Atom::from(3).into(), Atom::from(2).into()).into(),
                     Atom::from("x").into(),
-                ).into()).into(),
-                FunctionCall::new("sin", vec![Atom::Number(90.0).into()]).into()
+                ).into(),
+            ).into(),
+            FunctionCall::new("sin", vec![Atom::Number(90.0).into()]).into(),
         );
         let should_be = Expr::from(should_be);
 
-        let got = grammar::parse_Expr(src).unwrap();
+        let got = grammar::ExprParser::new().parse(src).unwrap();
 
         assert_eq!(got, should_be);
     }

@@ -5,14 +5,14 @@ authors = ["Michael Bryan <michaelfbryan@gmail.com>"]
 build = "build.rs"
 
 [dependencies]
-inkwell = { git = "https://github.com/TheDan64/inkwell", features = ["llvm3-7"] }
+inkwell = { git = "https://github.com/TheDan64/inkwell", features = ["llvm3-8"] }
 failure = "0.1.1"
-lalrpop-util = "0.14.0"
+lalrpop-util = "0.15.1"
 regex = "0.2.7"
 slog = "2.1.1"
 
 [build-dependencies]
-lalrpop = "0.14.0"
+lalrpop = "0.15.1"
 
 [dev-dependencies]
 pretty_assertions = "0.5.1"

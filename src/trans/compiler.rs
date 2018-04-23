@@ -1,16 +1,15 @@
-use failure::Error;
 use inkwell::builder::Builder;
 use inkwell::context::Context;
-use inkwell::execution_engine::ExecutionEngine;
 use inkwell::module::Module;
 use inkwell::types::FloatType;
 use inkwell::values::{FloatValue, FunctionValue};
 use slog::{Discard, Logger};
 use std::fmt::{self, Debug, Formatter};
-use std::mem;
 
-use syntax::{Atom, BinaryOp, Expr, FunctionCall};
+use syntax::{Atom, BinaryOp, Expr, FunctionCall, Op};
 
+/// The signature used for `calc`'s entrypoint, `"calc_main"`.
+pub type CalcMain = unsafe extern "C" fn() -> f64;
 pub const CALC_ENTRYPOINT: &str = "calc_main";
 
 pub struct Compiler<'ctx> {
@@ -80,7 +79,15 @@ impl<'ctx> Compiler<'ctx> {
     }
 
     fn compile_binary_op(&self, op: &BinaryOp) -> FloatValue {
-        unimplemented!()
+        let left = self.compile_expr(&op.left);
+        let right = self.compile_expr(&op.right);
+
+        match op.op {
+            Op::Add => self.builder.build_float_add(&left, &right, "add"),
+            Op::Subtract => self.builder.build_float_sub(&left, &right, "sub"),
+            Op::Multiply => self.builder.build_float_mul(&left, &right, "mul"),
+            Op::Divide => self.builder.build_float_div(&left, &right, "div"),
+        }
     }
 
     fn compile_function_call(&self, call: &FunctionCall) -> FloatValue {
@@ -101,9 +108,9 @@ impl<'ctx> Debug for Compiler<'ctx> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use inkwell::OptimizationLevel;
     use inkwell::targets::{InitializationConfig, Target};
     use inkwell::values::InstructionOpcode;
+    use inkwell::OptimizationLevel;
 
     #[test]
     fn compile_a_single_instruction() {
@@ -114,6 +121,9 @@ mod tests {
 
         let ctx = Context::create();
         let got = Compiler::new(&ctx).compile(&src);
+
+        let sig = ctx.f32_type().fn_type(&[], false);
+        let _func = got.add_function("dummy", &sig, None);
 
         let calc_main = got.get_function("calc_main").unwrap();
         assert_eq!(calc_main.count_basic_blocks(), 1);
@@ -127,12 +137,52 @@ mod tests {
             .unwrap();
 
         unsafe {
-            let func_addr = ee.get_function_address("calc_main").unwrap();
-            assert_ne!(func_addr, 0);
-            let func: fn() -> f64 = mem::transmute(func_addr as usize);
+            let func = ee.get_function::<CalcMain>("calc_main").unwrap();
 
             let got = func();
             assert_eq!(got, should_be);
         }
+    }
+
+    fn execute(src: &str) -> f64 {
+        Target::initialize_native(&InitializationConfig::default()).unwrap();
+
+        let ast = ::syntax::parse(src).unwrap();
+        let ctx = Context::create();
+        let module = Compiler::new(&ctx).compile(&ast);
+
+        let ee = module
+            .create_jit_execution_engine(OptimizationLevel::None)
+            .unwrap();
+
+        unsafe {
+            let func = ee.get_function::<CalcMain>("calc_main").unwrap();
+
+            func()
+        }
+    }
+
+    #[test]
+    fn execute_some_binary_ops() {
+        let inputs = vec![
+            ("1+1", 2.0),
+            ("1-1", 0.0),
+            ("2*4.5", 9.0),
+            ("100.0/3", 100.0 / 3.0),
+        ];
+
+        for (src, should_be) in inputs {
+            let got = execute(src);
+            assert_eq!(got, should_be);
+        }
+    }
+
+    #[test]
+    fn execute_a_more_complex_statement() {
+        let src = "5 * (100 + 3) / 9 - 2.5";
+        let should_be = 5.0 * (100.0 + 3.0) / 9.0 - 2.5;
+
+        let got = execute(src);
+        assert_eq!(got, should_be);
     }
 }
