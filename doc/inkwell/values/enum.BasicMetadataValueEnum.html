@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BasicMetadataValueEnum` enum in crate `inkwell`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BasicMetadataValueEnum">
+
+    <title>inkwell::values::BasicMetadataValueEnum - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum BasicMetadataValueEnum</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.ArrayValue">ArrayValue</a><a href="#variant.IntValue">IntValue</a><a href="#variant.FloatValue">FloatValue</a><a href="#variant.PointerValue">PointerValue</a><a href="#variant.StructValue">StructValue</a><a href="#variant.VectorValue">VectorValue</a><a href="#variant.MetadataValue">MetadataValue</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.as_array_value">as_array_value</a><a href="#method.as_int_value">as_int_value</a><a href="#method.as_float_value">as_float_value</a><a href="#method.as_pointer_value">as_pointer_value</a><a href="#method.as_struct_value">as_struct_value</a><a href="#method.as_vector_value">as_vector_value</a><a href="#method.as_metadata_value">as_metadata_value</a><a href="#method.into_array_value">into_array_value</a><a href="#method.into_int_value">into_int_value</a><a href="#method.into_float_value">into_float_value</a><a href="#method.into_pointer_value">into_pointer_value</a><a href="#method.into_struct_value">into_struct_value</a><a href="#method.into_vector_value">into_vector_value</a><a href="#method.into_metadata_value">into_metadata_value</a><a href="#method.is_array_value">is_array_value</a><a href="#method.is_int_value">is_int_value</a><a href="#method.is_float_value">is_float_value</a><a href="#method.is_pointer_value">is_pointer_value</a><a href="#method.is_struct_value">is_struct_value</a><a href="#method.is_vector_value">is_vector_value</a><a href="#method.is_metadata_value">is_metadata_value</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-From%3CArrayValue%3E">From&lt;ArrayValue&gt;</a><a href="#impl-From%3CIntValue%3E">From&lt;IntValue&gt;</a><a href="#impl-From%3CFloatValue%3E">From&lt;FloatValue&gt;</a><a href="#impl-From%3CPointerValue%3E">From&lt;PointerValue&gt;</a><a href="#impl-From%3CStructValue%3E">From&lt;StructValue&gt;</a><a href="#impl-From%3CVectorValue%3E">From&lt;VectorValue&gt;</a><a href="#impl-From%3CMetadataValue%3E">From&lt;MetadataValue&gt;</a></div></div><p class='location'><a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>values</a></p><script>window.sidebarCurrent = {name: 'BasicMetadataValueEnum', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>values</a>::<wbr><a class="enum" href=''>BasicMetadataValueEnum</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/inkwell/values/enums.rs.html#12-16' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum BasicMetadataValueEnum {
+    ArrayValue(<a class="struct" href="../../inkwell/values/struct.ArrayValue.html" title="struct inkwell::values::ArrayValue">ArrayValue</a>),
+    IntValue(<a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a>),
+    FloatValue(<a class="struct" href="../../inkwell/values/struct.FloatValue.html" title="struct inkwell::values::FloatValue">FloatValue</a>),
+    PointerValue(<a class="struct" href="../../inkwell/values/struct.PointerValue.html" title="struct inkwell::values::PointerValue">PointerValue</a>),
+    StructValue(<a class="struct" href="../../inkwell/values/struct.StructValue.html" title="struct inkwell::values::StructValue">StructValue</a>),
+    VectorValue(<a class="struct" href="../../inkwell/values/struct.VectorValue.html" title="struct inkwell::values::VectorValue">VectorValue</a>),
+    MetadataValue(<a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a>),
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.ArrayValue" class="variant small-section-header"><a href="#variant.ArrayValue" class="anchor field"></a><span id='ArrayValue.v' class='invisible'><code>ArrayValue(<a class="struct" href="../../inkwell/values/struct.ArrayValue.html" title="struct inkwell::values::ArrayValue">ArrayValue</a>)</code></span></span><span id="variant.IntValue" class="variant small-section-header"><a href="#variant.IntValue" class="anchor field"></a><span id='IntValue.v' class='invisible'><code>IntValue(<a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a>)</code></span></span><span id="variant.FloatValue" class="variant small-section-header"><a href="#variant.FloatValue" class="anchor field"></a><span id='FloatValue.v' class='invisible'><code>FloatValue(<a class="struct" href="../../inkwell/values/struct.FloatValue.html" title="struct inkwell::values::FloatValue">FloatValue</a>)</code></span></span><span id="variant.PointerValue" class="variant small-section-header"><a href="#variant.PointerValue" class="anchor field"></a><span id='PointerValue.v' class='invisible'><code>PointerValue(<a class="struct" href="../../inkwell/values/struct.PointerValue.html" title="struct inkwell::values::PointerValue">PointerValue</a>)</code></span></span><span id="variant.StructValue" class="variant small-section-header"><a href="#variant.StructValue" class="anchor field"></a><span id='StructValue.v' class='invisible'><code>StructValue(<a class="struct" href="../../inkwell/values/struct.StructValue.html" title="struct inkwell::values::StructValue">StructValue</a>)</code></span></span><span id="variant.VectorValue" class="variant small-section-header"><a href="#variant.VectorValue" class="anchor field"></a><span id='VectorValue.v' class='invisible'><code>VectorValue(<a class="struct" href="../../inkwell/values/struct.VectorValue.html" title="struct inkwell::values::VectorValue">VectorValue</a>)</code></span></span><span id="variant.MetadataValue" class="variant small-section-header"><a href="#variant.MetadataValue" class="anchor field"></a><span id='MetadataValue.v' class='invisible'><code>MetadataValue(<a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a>)</code></span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_array_value' class="method"><span id='as_array_value.v' class='invisible'><code>pub fn <a href='#method.as_array_value' class='fnname'>as_array_value</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/values/struct.ArrayValue.html" title="struct inkwell::values::ArrayValue">ArrayValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.as_int_value' class="method"><span id='as_int_value.v' class='invisible'><code>pub fn <a href='#method.as_int_value' class='fnname'>as_int_value</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.as_float_value' class="method"><span id='as_float_value.v' class='invisible'><code>pub fn <a href='#method.as_float_value' class='fnname'>as_float_value</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/values/struct.FloatValue.html" title="struct inkwell::values::FloatValue">FloatValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.as_pointer_value' class="method"><span id='as_pointer_value.v' class='invisible'><code>pub fn <a href='#method.as_pointer_value' class='fnname'>as_pointer_value</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/values/struct.PointerValue.html" title="struct inkwell::values::PointerValue">PointerValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.as_struct_value' class="method"><span id='as_struct_value.v' class='invisible'><code>pub fn <a href='#method.as_struct_value' class='fnname'>as_struct_value</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/values/struct.StructValue.html" title="struct inkwell::values::StructValue">StructValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.as_vector_value' class="method"><span id='as_vector_value.v' class='invisible'><code>pub fn <a href='#method.as_vector_value' class='fnname'>as_vector_value</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/values/struct.VectorValue.html" title="struct inkwell::values::VectorValue">VectorValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.as_metadata_value' class="method"><span id='as_metadata_value.v' class='invisible'><code>pub fn <a href='#method.as_metadata_value' class='fnname'>as_metadata_value</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.into_array_value' class="method"><span id='into_array_value.v' class='invisible'><code>pub fn <a href='#method.into_array_value' class='fnname'>into_array_value</a>(self) -&gt; <a class="struct" href="../../inkwell/values/struct.ArrayValue.html" title="struct inkwell::values::ArrayValue">ArrayValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.into_int_value' class="method"><span id='into_int_value.v' class='invisible'><code>pub fn <a href='#method.into_int_value' class='fnname'>into_int_value</a>(self) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.into_float_value' class="method"><span id='into_float_value.v' class='invisible'><code>pub fn <a href='#method.into_float_value' class='fnname'>into_float_value</a>(self) -&gt; <a class="struct" href="../../inkwell/values/struct.FloatValue.html" title="struct inkwell::values::FloatValue">FloatValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.into_pointer_value' class="method"><span id='into_pointer_value.v' class='invisible'><code>pub fn <a href='#method.into_pointer_value' class='fnname'>into_pointer_value</a>(self) -&gt; <a class="struct" href="../../inkwell/values/struct.PointerValue.html" title="struct inkwell::values::PointerValue">PointerValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.into_struct_value' class="method"><span id='into_struct_value.v' class='invisible'><code>pub fn <a href='#method.into_struct_value' class='fnname'>into_struct_value</a>(self) -&gt; <a class="struct" href="../../inkwell/values/struct.StructValue.html" title="struct inkwell::values::StructValue">StructValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.into_vector_value' class="method"><span id='into_vector_value.v' class='invisible'><code>pub fn <a href='#method.into_vector_value' class='fnname'>into_vector_value</a>(self) -&gt; <a class="struct" href="../../inkwell/values/struct.VectorValue.html" title="struct inkwell::values::VectorValue">VectorValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.into_metadata_value' class="method"><span id='into_metadata_value.v' class='invisible'><code>pub fn <a href='#method.into_metadata_value' class='fnname'>into_metadata_value</a>(self) -&gt; <a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-2' class='impl'><span class='in-band'><code>impl <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-2' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_array_value' class="method"><span id='is_array_value.v' class='invisible'><code>pub fn <a href='#method.is_array_value' class='fnname'>is_array_value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_int_value' class="method"><span id='is_int_value.v' class='invisible'><code>pub fn <a href='#method.is_int_value' class='fnname'>is_int_value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_float_value' class="method"><span id='is_float_value.v' class='invisible'><code>pub fn <a href='#method.is_float_value' class='fnname'>is_float_value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_pointer_value' class="method"><span id='is_pointer_value.v' class='invisible'><code>pub fn <a href='#method.is_pointer_value' class='fnname'>is_pointer_value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_struct_value' class="method"><span id='is_struct_value.v' class='invisible'><code>pub fn <a href='#method.is_struct_value' class='fnname'>is_struct_value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_vector_value' class="method"><span id='is_vector_value.v' class='invisible'><code>pub fn <a href='#method.is_vector_value' class='fnname'>is_vector_value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_metadata_value' class="method"><span id='is_metadata_value.v' class='invisible'><code>pub fn <a href='#method.is_metadata_value' class='fnname'>is_metadata_value</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-From%3CArrayValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.ArrayValue.html" title="struct inkwell::values::ArrayValue">ArrayValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-From%3CArrayValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.ArrayValue.html" title="struct inkwell::values::ArrayValue">ArrayValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CIntValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-From%3CIntValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-1' class="method"><span id='from.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CFloatValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.FloatValue.html" title="struct inkwell::values::FloatValue">FloatValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-From%3CFloatValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-2' class="method"><span id='from.v-2' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.FloatValue.html" title="struct inkwell::values::FloatValue">FloatValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CPointerValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.PointerValue.html" title="struct inkwell::values::PointerValue">PointerValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-From%3CPointerValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-3' class="method"><span id='from.v-3' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.PointerValue.html" title="struct inkwell::values::PointerValue">PointerValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CStructValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.StructValue.html" title="struct inkwell::values::StructValue">StructValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-From%3CStructValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-4' class="method"><span id='from.v-4' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.StructValue.html" title="struct inkwell::values::StructValue">StructValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CVectorValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.VectorValue.html" title="struct inkwell::values::VectorValue">VectorValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-From%3CVectorValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-5' class="method"><span id='from.v-5' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.VectorValue.html" title="struct inkwell::values::VectorValue">VectorValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CMetadataValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code><a href='#impl-From%3CMetadataValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-6' class="method"><span id='from.v-6' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.BasicMetadataValueEnum.html" title="enum inkwell::values::BasicMetadataValueEnum">BasicMetadataValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "inkwell";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

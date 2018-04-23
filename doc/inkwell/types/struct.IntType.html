@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `IntType` struct in crate `inkwell`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, IntType">
+
+    <title>inkwell::types::IntType - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct IntType</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.bool_type">bool_type</a><a href="#method.i8_type">i8_type</a><a href="#method.i16_type">i16_type</a><a href="#method.i32_type">i32_type</a><a href="#method.i64_type">i64_type</a><a href="#method.i128_type">i128_type</a><a href="#method.custom_width_int_type">custom_width_int_type</a><a href="#method.const_int">const_int</a><a href="#method.const_int_from_string">const_int_from_string</a><a href="#method.const_int_arbitrary_precision">const_int_arbitrary_precision</a><a href="#method.const_all_ones">const_all_ones</a><a href="#method.const_null_ptr">const_null_ptr</a><a href="#method.const_null">const_null</a><a href="#method.fn_type">fn_type</a><a href="#method.array_type">array_type</a><a href="#method.vec_type">vec_type</a><a href="#method.get_context">get_context</a><a href="#method.is_sized">is_sized</a><a href="#method.size_of">size_of</a><a href="#method.ptr_type">ptr_type</a><a href="#method.get_bit_width">get_bit_width</a><a href="#method.print_to_string">print_to_string</a><a href="#method.print_to_stderr">print_to_stderr</a><a href="#method.get_undef">get_undef</a><a href="#method.create_generic_value">create_generic_value</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-From%3CIntType%3E">From&lt;IntType&gt;</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Eq">Eq</a><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-AnyType">AnyType</a><a href="#impl-BasicType">BasicType</a></div></div><p class='location'><a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>types</a></p><script>window.sidebarCurrent = {name: 'IntType', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>types</a>::<wbr><a class="struct" href=''>IntType</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#14-16' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct IntType { /* fields omitted */ }</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#18-330' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bool_type' class="method"><span id='bool_type.v' class='invisible'><code>pub fn <a href='#method.bool_type' class='fnname'>bool_type</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#41-47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>IntType</code> representing 1 bit width. It will be automatically assigned the global context.</p>
+<p>To use your own <code>Context</code>, see <a href="../context/struct.Context.html#method.bool_type">inkwell::context::bool_type()</a></p>
+<h1 id="example" class="section-header"><a href="#example">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="kw">let</span> <span class="ident">bool_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">bool_type</span>();
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">bool_type</span>.<span class="ident">get_bit_width</span>(), <span class="number">1</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">bool_type</span>.<span class="ident">get_context</span>(), <span class="ident">Context</span>::<span class="ident">get_global</span>());</pre>
+</div><h4 id='method.i8_type' class="method"><span id='i8_type.v' class='invisible'><code>pub fn <a href='#method.i8_type' class='fnname'>i8_type</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#63-69' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>IntType</code> representing 8 bit width. It will be automatically assigned the global context.</p>
+<p>To use your own <code>Context</code>, see <a href="../context/struct.Context.html#method.i8_type">inkwell::context::i8_type()</a></p>
+<h1 id="example-1" class="section-header"><a href="#example-1">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="kw">let</span> <span class="ident">i8_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i8_type</span>();
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i8_type</span>.<span class="ident">get_bit_width</span>(), <span class="number">8</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i8_type</span>.<span class="ident">get_context</span>(), <span class="ident">Context</span>::<span class="ident">get_global</span>());</pre>
+</div><h4 id='method.i16_type' class="method"><span id='i16_type.v' class='invisible'><code>pub fn <a href='#method.i16_type' class='fnname'>i16_type</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#85-91' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>IntType</code> representing 16 bit width. It will be automatically assigned the global context.</p>
+<p>To use your own <code>Context</code>, see <a href="../context/struct.Context.html#method.i16_type">inkwell::context::i16_type()</a></p>
+<h1 id="example-2" class="section-header"><a href="#example-2">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="kw">let</span> <span class="ident">i16_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i16_type</span>();
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i16_type</span>.<span class="ident">get_bit_width</span>(), <span class="number">16</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i16_type</span>.<span class="ident">get_context</span>(), <span class="ident">Context</span>::<span class="ident">get_global</span>());</pre>
+</div><h4 id='method.i32_type' class="method"><span id='i32_type.v' class='invisible'><code>pub fn <a href='#method.i32_type' class='fnname'>i32_type</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#107-113' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>IntType</code> representing 32 bit width. It will be automatically assigned the global context.</p>
+<p>To use your own <code>Context</code>, see <a href="../context/struct.Context.html#method.i32_type">inkwell::context::i32_type()</a></p>
+<h1 id="example-3" class="section-header"><a href="#example-3">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="kw">let</span> <span class="ident">i32_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i32_type</span>();
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i32_type</span>.<span class="ident">get_bit_width</span>(), <span class="number">32</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i32_type</span>.<span class="ident">get_context</span>(), <span class="ident">Context</span>::<span class="ident">get_global</span>());</pre>
+</div><h4 id='method.i64_type' class="method"><span id='i64_type.v' class='invisible'><code>pub fn <a href='#method.i64_type' class='fnname'>i64_type</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#129-135' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>IntType</code> representing 64 bit width. It will be automatically assigned the global context.</p>
+<p>To use your own <code>Context</code>, see <a href="../context/struct.Context.html#method.i64_type">inkwell::context::i64_type()</a></p>
+<h1 id="example-4" class="section-header"><a href="#example-4">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="kw">let</span> <span class="ident">i64_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i64_type</span>();
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i64_type</span>.<span class="ident">get_bit_width</span>(), <span class="number">64</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i64_type</span>.<span class="ident">get_context</span>(), <span class="ident">Context</span>::<span class="ident">get_global</span>());</pre>
+</div><h4 id='method.i128_type' class="method"><span id='i128_type.v' class='invisible'><code>pub fn <a href='#method.i128_type' class='fnname'>i128_type</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#151-156' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>IntType</code> representing 128 bit width. It will be automatically assigned the global context.</p>
+<p>To use your own <code>Context</code>, see <a href="../context/struct.Context.html#method.i128_type">inkwell::context::i128_type()</a></p>
+<h1 id="example-5" class="section-header"><a href="#example-5">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="kw">let</span> <span class="ident">i128_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i128_type</span>();
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i128_type</span>.<span class="ident">get_bit_width</span>(), <span class="number">128</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i128_type</span>.<span class="ident">get_context</span>(), <span class="ident">Context</span>::<span class="ident">get_global</span>());</pre>
+</div><h4 id='method.custom_width_int_type' class="method"><span id='custom_width_int_type.v' class='invisible'><code>pub fn <a href='#method.custom_width_int_type' class='fnname'>custom_width_int_type</a>(bits: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#172-178' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the <code>IntType</code> representing a custom bit width. It will be automatically assigned the global context.</p>
+<p>To use your own <code>Context</code>, see <a href="../context/struct.Context.html#method.custom_width_int_type">inkwell::context::custom_width_int_type()</a></p>
+<h1 id="example-6" class="section-header"><a href="#example-6">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="kw">let</span> <span class="ident">i42_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">custom_width_int_type</span>(<span class="number">42</span>);
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i42_type</span>.<span class="ident">get_bit_width</span>(), <span class="number">42</span>);
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">i42_type</span>.<span class="ident">get_context</span>(), <span class="ident">Context</span>::<span class="ident">get_global</span>());</pre>
+</div><h4 id='method.const_int' class="method"><span id='const_int.v' class='invisible'><code>pub fn <a href='#method.const_int' class='fnname'>const_int</a>(&amp;self, value: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, sign_extend: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#197-203' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates an <code>IntValue</code> repesenting a constant value of this <code>IntType</code>. It will be automatically assigned this <code>IntType</code>'s <code>Context</code>.</p>
+<h1 id="example-7" class="section-header"><a href="#example-7">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="comment">// Global Context</span>
+<span class="kw">let</span> <span class="ident">i32_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i32_type</span>();
+<span class="kw">let</span> <span class="ident">i32_value</span> <span class="op">=</span> <span class="ident">i32_type</span>.<span class="ident">const_int</span>(<span class="number">42</span>, <span class="bool-val">false</span>);
+
+<span class="comment">// Custom Context</span>
+<span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">Context</span>::<span class="ident">create</span>();
+<span class="kw">let</span> <span class="ident">i32_type</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">i32_type</span>();
+<span class="kw">let</span> <span class="ident">i32_value</span> <span class="op">=</span> <span class="ident">i32_type</span>.<span class="ident">const_int</span>(<span class="number">42</span>, <span class="bool-val">false</span>);</pre>
+</div><h4 id='method.const_int_from_string' class="method"><span id='const_int_from_string.v' class='invisible'><code>pub fn <a href='#method.const_int_from_string' class='fnname'>const_int_from_string</a>(&amp;self, slice: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, radix: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#207-213' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.const_int_arbitrary_precision' class="method"><span id='const_int_arbitrary_precision.v' class='invisible'><code>pub fn <a href='#method.const_int_arbitrary_precision' class='fnname'>const_int_arbitrary_precision</a>(&amp;self, words: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#215-221' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.const_all_ones' class="method"><span id='const_all_ones.v' class='invisible'><code>pub fn <a href='#method.const_all_ones' class='fnname'>const_all_ones</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#239-245' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates an <code>IntValue</code> representing a constant value of all one bits of this <code>IntType</code>. It will be automatically assigned this <code>IntType</code>'s <code>Context</code>.</p>
+<h1 id="example-8" class="section-header"><a href="#example-8">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="comment">// Global Context</span>
+<span class="kw">let</span> <span class="ident">i32_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i32_type</span>();
+<span class="kw">let</span> <span class="ident">i32_ptr_value</span> <span class="op">=</span> <span class="ident">i32_type</span>.<span class="ident">const_all_ones</span>();
+
+<span class="comment">// Custom Context</span>
+<span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">Context</span>::<span class="ident">create</span>();
+<span class="kw">let</span> <span class="ident">i32_type</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">i32_type</span>();
+<span class="kw">let</span> <span class="ident">i32_ptr_value</span> <span class="op">=</span> <span class="ident">i32_type</span>.<span class="ident">const_all_ones</span>();</pre>
+</div><h4 id='method.const_null_ptr' class="method"><span id='const_null_ptr.v' class='invisible'><code>pub fn <a href='#method.const_null_ptr' class='fnname'>const_null_ptr</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/values/struct.PointerValue.html" title="struct inkwell::values::PointerValue">PointerValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#263-265' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a <code>PointerValue</code> representing a constant value of zero (null pointer) pointing to this <code>IntType</code>. It will be automatically assigned this <code>IntType</code>'s <code>Context</code>.</p>
+<h1 id="example-9" class="section-header"><a href="#example-9">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">types</span>::<span class="ident">IntType</span>;
+
+<span class="comment">// Global Context</span>
+<span class="kw">let</span> <span class="ident">i32_type</span> <span class="op">=</span> <span class="ident">IntType</span>::<span class="ident">i32_type</span>();
+<span class="kw">let</span> <span class="ident">i32_value</span> <span class="op">=</span> <span class="ident">i32_type</span>.<span class="ident">const_null_ptr</span>();
+
+<span class="comment">// Custom Context</span>
+<span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">Context</span>::<span class="ident">create</span>();
+<span class="kw">let</span> <span class="ident">i32_type</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">i32_type</span>();
+<span class="kw">let</span> <span class="ident">i32_value</span> <span class="op">=</span> <span class="ident">i32_type</span>.<span class="ident">const_null_ptr</span>();</pre>
+</div><h4 id='method.const_null' class="method"><span id='const_null.v' class='invisible'><code>pub fn <a href='#method.const_null' class='fnname'>const_null</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#267-273' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.fn_type' class="method"><span id='fn_type.v' class='invisible'><code>pub fn <a href='#method.fn_type' class='fnname'>fn_type</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_types: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>&amp;<a class="trait" href="../../inkwell/types/trait.BasicType.html" title="trait inkwell::types::BasicType">BasicType</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;is_var_args: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><br>) -&gt; <a class="struct" href="../../inkwell/types/struct.FunctionType.html" title="struct inkwell::types::FunctionType">FunctionType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#275-277' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.array_type' class="method"><span id='array_type.v' class='invisible'><code>pub fn <a href='#method.array_type' class='fnname'>array_type</a>(&amp;self, size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="struct" href="../../inkwell/types/struct.ArrayType.html" title="struct inkwell::types::ArrayType">ArrayType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#279-281' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.vec_type' class="method"><span id='vec_type.v' class='invisible'><code>pub fn <a href='#method.vec_type' class='fnname'>vec_type</a>(&amp;self, size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="struct" href="../../inkwell/types/struct.VectorType.html" title="struct inkwell::types::VectorType">VectorType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#283-285' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_context' class="method"><span id='get_context.v' class='invisible'><code>pub fn <a href='#method.get_context' class='fnname'>get_context</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/context/struct.ContextRef.html" title="struct inkwell::context::ContextRef">ContextRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#287-289' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_sized' class="method"><span id='is_sized.v' class='invisible'><code>pub fn <a href='#method.is_sized' class='fnname'>is_sized</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#292-294' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.size_of' class="method"><span id='size_of.v' class='invisible'><code>pub fn <a href='#method.size_of' class='fnname'>size_of</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#296-298' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.ptr_type' class="method"><span id='ptr_type.v' class='invisible'><code>pub fn <a href='#method.ptr_type' class='fnname'>ptr_type</a>(&amp;self, address_space: <a class="enum" href="../../inkwell/enum.AddressSpace.html" title="enum inkwell::AddressSpace">AddressSpace</a>) -&gt; <a class="struct" href="../../inkwell/types/struct.PointerType.html" title="struct inkwell::types::PointerType">PointerType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#300-302' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_bit_width' class="method"><span id='get_bit_width.v' class='invisible'><code>pub fn <a href='#method.get_bit_width' class='fnname'>get_bit_width</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#304-308' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.print_to_string' class="method"><span id='print_to_string.v' class='invisible'><code>pub fn <a href='#method.print_to_string' class='fnname'>print_to_string</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#310-312' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.print_to_stderr' class="method"><span id='print_to_stderr.v' class='invisible'><code>pub fn <a href='#method.print_to_stderr' class='fnname'>print_to_stderr</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#315-317' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_undef' class="method"><span id='get_undef.v' class='invisible'><code>pub fn <a href='#method.get_undef' class='fnname'>get_undef</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/values/struct.IntValue.html" title="struct inkwell::values::IntValue">IntValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#319-321' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.create_generic_value' class="method"><span id='create_generic_value.v' class='invisible'><code>pub fn <a href='#method.create_generic_value' class='fnname'>create_generic_value</a>(&amp;self, value: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, is_signed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a class="struct" href="../../inkwell/values/struct.GenericValue.html" title="struct inkwell::values::GenericValue">GenericValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#323-329' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-From%3CIntType%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a>&gt; for <a class="enum" href="../../inkwell/types/enum.AnyTypeEnum.html" title="enum inkwell::types::AnyTypeEnum">AnyTypeEnum</a></code><a href='#impl-From%3CIntType%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/enums.rs.html#28-32' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a>) -&gt; <a class="enum" href="../../inkwell/types/enum.AnyTypeEnum.html" title="enum inkwell::types::AnyTypeEnum">AnyTypeEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/enums.rs.html#29-31' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CIntType%3E-1' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a>&gt; for <a class="enum" href="../../inkwell/types/enum.BasicTypeEnum.html" title="enum inkwell::types::BasicTypeEnum">BasicTypeEnum</a></code><a href='#impl-From%3CIntType%3E-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/enums.rs.html#28-32' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-1' class="method"><span id='from.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a>) -&gt; <a class="enum" href="../../inkwell/types/enum.BasicTypeEnum.html" title="enum inkwell::types::BasicTypeEnum">BasicTypeEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/enums.rs.html#29-31' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/int_type.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-AnyType' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../inkwell/types/trait.AnyType.html" title="trait inkwell::types::AnyType">AnyType</a> for <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl-AnyType' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/traits.rs.html#18' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_any_type_enum' class="method"><span id='as_any_type_enum.v' class='invisible'><code>fn <a href='../../inkwell/types/trait.AnyType.html#method.as_any_type_enum' class='fnname'>as_any_type_enum</a>(&amp;self) -&gt; <a class="enum" href="../../inkwell/types/enum.AnyTypeEnum.html" title="enum inkwell::types::AnyTypeEnum">AnyTypeEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/traits.rs.html#26-28' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an <code>AnyTypeEnum</code> that represents the current type.</p>
+</div></div><h3 id='impl-BasicType' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../inkwell/types/trait.BasicType.html" title="trait inkwell::types::BasicType">BasicType</a> for <a class="struct" href="../../inkwell/types/struct.IntType.html" title="struct inkwell::types::IntType">IntType</a></code><a href='#impl-BasicType' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/traits.rs.html#18' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_basic_type_enum' class="method"><span id='as_basic_type_enum.v' class='invisible'><code>fn <a href='../../inkwell/types/trait.BasicType.html#method.as_basic_type_enum' class='fnname'>as_basic_type_enum</a>(&amp;self) -&gt; <a class="enum" href="../../inkwell/types/enum.BasicTypeEnum.html" title="enum inkwell::types::BasicTypeEnum">BasicTypeEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/types/traits.rs.html#34-36' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a <code>BasicTypeEnum</code> that represents the current type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "inkwell";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

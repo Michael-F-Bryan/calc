@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AnyTypeEnum",""],["BasicTypeEnum",""]],"struct":[["ArrayType",""],["FloatType",""],["FunctionType",""],["IntType",""],["PointerType",""],["StructType",""],["VectorType",""],["VoidType",""]],"trait":[["AnyType","Represents any LLVM type."],["BasicType","Represents a basic LLVM type, that may be used in functions and struct declarations."]]});

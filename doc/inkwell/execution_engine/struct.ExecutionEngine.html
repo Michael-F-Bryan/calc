@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ExecutionEngine` struct in crate `inkwell`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ExecutionEngine">
+
+    <title>inkwell::execution_engine::ExecutionEngine - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct ExecutionEngine</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.link_in_mc_jit">link_in_mc_jit</a><a href="#method.link_in_interpreter">link_in_interpreter</a><a href="#method.add_global_mapping">add_global_mapping</a><a href="#method.add_module">add_module</a><a href="#method.remove_module">remove_module</a><a href="#method.get_function">get_function</a><a href="#method.get_target_data">get_target_data</a><a href="#method.get_function_value">get_function_value</a><a href="#method.run_function">run_function</a><a href="#method.run_function_as_main">run_function_as_main</a><a href="#method.free_fn_machine_code">free_fn_machine_code</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Eq">Eq</a><a href="#impl-Debug">Debug</a><a href="#impl-Drop">Drop</a><a href="#impl-Clone">Clone</a></div></div><p class='location'><a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>execution_engine</a></p><script>window.sidebarCurrent = {name: 'ExecutionEngine', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>execution_engine</a>::<wbr><a class="struct" href=''>ExecutionEngine</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#27-31' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ExecutionEngine { /* fields omitted */ }</pre><div class='docblock'><p>A reference-counted wrapper around LLVM's execution engine.</p>
+<p>Cloning this object is essentially just a case of copying a couple pointers
+and incrementing one or two atomics, so this should be quite cheap to create
+copies. The underlying LLVM object will be automatically deallocated when
+there are no more references to it.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#33-308' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.link_in_mc_jit' class="method"><span id='link_in_mc_jit.v' class='invisible'><code>pub fn <a href='#method.link_in_mc_jit' class='fnname'>link_in_mc_jit</a>()</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#49-53' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.link_in_interpreter' class="method"><span id='link_in_interpreter.v' class='invisible'><code>pub fn <a href='#method.link_in_interpreter' class='fnname'>link_in_interpreter</a>()</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#55-59' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_global_mapping' class="method"><span id='add_global_mapping.v' class='invisible'><code>pub fn <a href='#method.add_global_mapping' class='fnname'>add_global_mapping</a>(&amp;self, value: &amp;<a class="trait" href="../../inkwell/values/trait.AnyValue.html" title="trait inkwell::values::AnyValue">AnyValue</a>, addr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#100-104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Maps the specified value to an address.</p>
+<h1 id="example" class="section-header"><a href="#example">Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">targets</span>::{<span class="ident">InitializationConfig</span>, <span class="ident">Target</span>};
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">OptimizationLevel</span>;
+
+<span class="ident">Target</span>::<span class="ident">initialize_native</span>(<span class="kw-2">&amp;</span><span class="ident">InitializationConfig</span>::<span class="ident">default</span>()).<span class="ident">unwrap</span>();
+
+<span class="kw">extern</span> <span class="kw">fn</span> <span class="ident">sumf</span>(<span class="ident">a</span>: <span class="ident">f64</span>, <span class="ident">b</span>: <span class="ident">f64</span>) <span class="op">-&gt;</span> <span class="ident">f64</span> {
+    <span class="ident">a</span> <span class="op">+</span> <span class="ident">b</span>
+}
+
+<span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">Context</span>::<span class="ident">create</span>();
+<span class="kw">let</span> <span class="ident">module</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">create_module</span>(<span class="string">&quot;test&quot;</span>);
+<span class="kw">let</span> <span class="ident">builder</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">create_builder</span>();
+
+<span class="kw">let</span> <span class="ident">ft</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">f64_type</span>();
+<span class="kw">let</span> <span class="ident">fnt</span> <span class="op">=</span> <span class="ident">ft</span>.<span class="ident">fn_type</span>(<span class="kw-2">&amp;</span>[], <span class="bool-val">false</span>);
+
+<span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="ident">module</span>.<span class="ident">add_function</span>(<span class="string">&quot;test_fn&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">fnt</span>, <span class="prelude-val">None</span>);
+<span class="kw">let</span> <span class="ident">b</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">append_basic_block</span>(<span class="kw-2">&amp;</span><span class="ident">f</span>, <span class="string">&quot;entry&quot;</span>);
+<span class="ident">builder</span>.<span class="ident">position_at_end</span>(<span class="kw-2">&amp;</span><span class="ident">b</span>);
+
+<span class="kw">let</span> <span class="ident">extf</span> <span class="op">=</span> <span class="ident">module</span>.<span class="ident">add_function</span>(<span class="string">&quot;sumf&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">ft</span>.<span class="ident">fn_type</span>(<span class="kw-2">&amp;</span>[ <span class="kw-2">&amp;</span><span class="ident">ft</span>, <span class="kw-2">&amp;</span><span class="ident">ft</span> ], <span class="bool-val">false</span>), <span class="prelude-val">None</span>);
+
+<span class="kw">let</span> <span class="ident">argf</span> <span class="op">=</span> <span class="ident">ft</span>.<span class="ident">const_float</span>(<span class="number">64.</span>);
+<span class="kw">let</span> <span class="ident">retv</span> <span class="op">=</span> <span class="ident">builder</span>.<span class="ident">build_call</span>(<span class="kw-2">&amp;</span><span class="ident">extf</span>, <span class="kw-2">&amp;</span>[ <span class="kw-2">&amp;</span><span class="ident">argf</span>, <span class="kw-2">&amp;</span><span class="ident">argf</span> ], <span class="string">&quot;retv&quot;</span>, <span class="bool-val">false</span>).<span class="ident">left</span>().<span class="ident">unwrap</span>().<span class="ident">into_float_value</span>();
+
+<span class="ident">builder</span>.<span class="ident">build_return</span>(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">retv</span>));
+
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">ee</span> <span class="op">=</span> <span class="ident">module</span>.<span class="ident">create_jit_execution_engine</span>(<span class="ident">OptimizationLevel</span>::<span class="prelude-val">None</span>).<span class="ident">unwrap</span>();
+<span class="ident">ee</span>.<span class="ident">add_global_mapping</span>(<span class="kw-2">&amp;</span><span class="ident">extf</span>, <span class="ident">sumf</span> <span class="kw">as</span> <span class="ident">usize</span>);
+
+<span class="kw">let</span> <span class="ident">result</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">ee</span>.<span class="ident">run_function</span>(<span class="kw-2">&amp;</span><span class="ident">f</span>, <span class="kw-2">&amp;</span>[]) }.<span class="ident">as_float</span>(<span class="kw-2">&amp;</span><span class="ident">ft</span>);
+
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">result</span>, <span class="number">128.</span>);</pre>
+</div><h4 id='method.add_module' class="method"><span id='add_module.v' class='invisible'><code>pub fn <a href='#method.add_module' class='fnname'>add_module</a>(&amp;self, module: &amp;<a class="struct" href="../../inkwell/module/struct.Module.html" title="struct inkwell::module::Module">Module</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#123-135' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Adds a module to an <code>ExecutionEngine</code>.</p>
+<p>The method will be <code>Ok(())</code> if the module does not belong to an <code>ExecutionEngine</code> already and <code>Err(())</code> otherwise.</p>
+
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">targets</span>::{<span class="ident">InitializationConfig</span>, <span class="ident">Target</span>};
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">context</span>::<span class="ident">Context</span>;
+<span class="kw">use</span> <span class="ident">inkwell</span>::<span class="ident">OptimizationLevel</span>;
+
+<span class="ident">Target</span>::<span class="ident">initialize_native</span>(<span class="kw-2">&amp;</span><span class="ident">InitializationConfig</span>::<span class="ident">default</span>()).<span class="ident">unwrap</span>();
+
+<span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">Context</span>::<span class="ident">create</span>();
+<span class="kw">let</span> <span class="ident">module</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">create_module</span>(<span class="string">&quot;test&quot;</span>);
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">ee</span> <span class="op">=</span> <span class="ident">module</span>.<span class="ident">create_jit_execution_engine</span>(<span class="ident">OptimizationLevel</span>::<span class="prelude-val">None</span>).<span class="ident">unwrap</span>();
+
+<span class="macro">assert</span><span class="macro">!</span>(<span class="ident">ee</span>.<span class="ident">add_module</span>(<span class="kw-2">&amp;</span><span class="ident">module</span>).<span class="ident">is_err</span>());</pre>
+</div><h4 id='method.remove_module' class="method"><span id='remove_module.v' class='invisible'><code>pub fn <a href='#method.remove_module' class='fnname'>remove_module</a>(&amp;self, module: &amp;<a class="struct" href="../../inkwell/module/struct.Module.html" title="struct inkwell::module::Module">Module</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#137-167' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_function' class="method"><span id='get_function.v' class='invisible'><code>pub unsafe fn <a href='#method.get_function' class='fnname'>get_function</a>&lt;F&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;fn_name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../inkwell/execution_engine/struct.Symbol.html" title="struct inkwell::execution_engine::Symbol">Symbol</a>&lt;F&gt;, <a class="enum" href="../../inkwell/execution_engine/enum.FunctionLookupError.html" title="enum inkwell::execution_engine::FunctionLookupError">FunctionLookupError</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="../../inkwell/execution_engine/trait.UnsafeFunctionPointer.html" title="trait inkwell::execution_engine::UnsafeFunctionPointer">UnsafeFunctionPointer</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#226-252' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Try to load a function from the execution engine.</p>
+<p>If a target hasn't already been initialized, spurious &quot;function not
+found&quot; errors may be encountered.</p>
+<p>The <a href="trait.UnsafeFunctionPointer.html"><code>UnsafeFunctionPointer</code></a> trait is designed so only <code>unsafe extern &quot;C&quot;</code> functions can be retrieved via the <code>get_function()</code> method. If you
+get funny type errors then it's probably because you have specified the
+wrong calling convention or forgotten to specify the retrieved function
+as <code>unsafe</code>.</p>
+<h1 id="examples" class="section-header"><a href="#examples">Examples</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="kw">let</span> <span class="ident">context</span> <span class="op">=</span> <span class="ident">Context</span>::<span class="ident">create</span>();
+<span class="kw">let</span> <span class="ident">module</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">create_module</span>(<span class="string">&quot;test&quot;</span>);
+<span class="kw">let</span> <span class="ident">builder</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">create_builder</span>();
+
+<span class="comment">// Set up the function signature</span>
+<span class="kw">let</span> <span class="ident">double</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">f64_type</span>();
+<span class="kw">let</span> <span class="ident">sig</span> <span class="op">=</span> <span class="ident">double</span>.<span class="ident">fn_type</span>(<span class="kw-2">&amp;</span>[], <span class="bool-val">false</span>);
+
+<span class="comment">// Add the function to our module</span>
+<span class="kw">let</span> <span class="ident">f</span> <span class="op">=</span> <span class="ident">module</span>.<span class="ident">add_function</span>(<span class="string">&quot;test_fn&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">sig</span>, <span class="prelude-val">None</span>);
+<span class="kw">let</span> <span class="ident">b</span> <span class="op">=</span> <span class="ident">context</span>.<span class="ident">append_basic_block</span>(<span class="kw-2">&amp;</span><span class="ident">f</span>, <span class="string">&quot;entry&quot;</span>);
+<span class="ident">builder</span>.<span class="ident">position_at_end</span>(<span class="kw-2">&amp;</span><span class="ident">b</span>);
+
+<span class="comment">// Insert a return statement</span>
+<span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">double</span>.<span class="ident">const_float</span>(<span class="number">64.0</span>);
+<span class="ident">builder</span>.<span class="ident">build_return</span>(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><span class="ident">ret</span>));
+
+<span class="comment">// create the JIT engine</span>
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">ee</span> <span class="op">=</span> <span class="ident">module</span>.<span class="ident">create_jit_execution_engine</span>(<span class="ident">OptimizationLevel</span>::<span class="prelude-val">None</span>).<span class="ident">unwrap</span>();
+ 
+<span class="comment">// fetch our JIT&#39;d function and execute it</span>
+<span class="kw">unsafe</span> {
+    <span class="kw">let</span> <span class="ident">test_fn</span> <span class="op">=</span> <span class="ident">ee</span>.<span class="ident">get_function</span>::<span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>() <span class="op">-&gt;</span> <span class="ident">f64</span><span class="op">&gt;</span>(<span class="string">&quot;test_fn&quot;</span>).<span class="ident">unwrap</span>();
+    <span class="kw">let</span> <span class="ident">return_value</span> <span class="op">=</span> <span class="ident">test_fn</span>();
+    <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">return_value</span>, <span class="number">64.0</span>);
+}</pre>
+<h1 id="safety" class="section-header"><a href="#safety">Safety</a></h1>
+<p>It is the caller's responsibility to ensure they call the function with
+the correct signature and calling convention.</p>
+<p>The <code>Symbol</code> wrapper ensures a function won't accidentally outlive the
+execution engine it came from, but adding functions after calling this
+method <em>may</em> invalidate the function pointer.</p>
+</div><h4 id='method.get_target_data' class="method"><span id='get_target_data.v' class='invisible'><code>pub fn <a href='#method.get_target_data' class='fnname'>get_target_data</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#256-258' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_function_value' class="method"><span id='get_function_value.v' class='invisible'><code>pub fn <a href='#method.get_function_value' class='fnname'>get_function_value</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;fn_name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>, <a class="enum" href="../../inkwell/execution_engine/enum.FunctionLookupError.html" title="enum inkwell::execution_engine::FunctionLookupError">FunctionLookupError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#263-280' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.run_function' class="method"><span id='run_function.v' class='invisible'><code>pub unsafe fn <a href='#method.run_function' class='fnname'>run_function</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;function: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;args: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>&amp;<a class="struct" href="../../inkwell/values/struct.GenericValue.html" title="struct inkwell::values::GenericValue">GenericValue</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a><br>) -&gt; <a class="struct" href="../../inkwell/values/struct.GenericValue.html" title="struct inkwell::values::GenericValue">GenericValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#284-292' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.run_function_as_main' class="method"><span id='run_function_as_main.v' class='invisible'><code>pub fn <a href='#method.run_function_as_main' class='fnname'>run_function_as_main</a>(&amp;self, function: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#294-301' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.free_fn_machine_code' class="method"><span id='free_fn_machine_code.v' class='invisible'><code>pub fn <a href='#method.free_fn_machine_code' class='fnname'>free_fn_machine_code</a>(&amp;self, function: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#303-307' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#26' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#26' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#26' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#26' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#26' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#26' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Drop' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a></code><a href='#impl-Drop' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#312-320' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class="method"><span id='drop.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#313-319' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the destructor for this type. <a href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#322-326' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/execution_engine/struct.ExecutionEngine.html" title="struct inkwell::execution_engine::ExecutionEngine">ExecutionEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/execution_engine.rs.html#323-325' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "inkwell";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LLVMRealPredicate` enum in crate `llvm_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LLVMRealPredicate">
+
+    <title>llvm_sys::LLVMRealPredicate - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../dark.css">
+    <link rel="stylesheet" type="text/css" href="../main.css" id="themeStyle">
+    <script src="../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum LLVMRealPredicate</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.LLVMRealPredicateFalse">LLVMRealPredicateFalse</a><a href="#variant.LLVMRealOEQ">LLVMRealOEQ</a><a href="#variant.LLVMRealOGT">LLVMRealOGT</a><a href="#variant.LLVMRealOGE">LLVMRealOGE</a><a href="#variant.LLVMRealOLT">LLVMRealOLT</a><a href="#variant.LLVMRealOLE">LLVMRealOLE</a><a href="#variant.LLVMRealONE">LLVMRealONE</a><a href="#variant.LLVMRealORD">LLVMRealORD</a><a href="#variant.LLVMRealUNO">LLVMRealUNO</a><a href="#variant.LLVMRealUEQ">LLVMRealUEQ</a><a href="#variant.LLVMRealUGT">LLVMRealUGT</a><a href="#variant.LLVMRealUGE">LLVMRealUGE</a><a href="#variant.LLVMRealULT">LLVMRealULT</a><a href="#variant.LLVMRealULE">LLVMRealULE</a><a href="#variant.LLVMRealUNE">LLVMRealUNE</a><a href="#variant.LLVMRealPredicateTrue">LLVMRealPredicateTrue</a></div></div><p class='location'><a href='index.html'>llvm_sys</a></p><script>window.sidebarCurrent = {name: 'LLVMRealPredicate', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>llvm_sys</a>::<wbr><a class="enum" href=''>LLVMRealPredicate</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/llvm_sys/lib.rs.html#279-296' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(C)]
+</div>pub enum LLVMRealPredicate {
+    LLVMRealPredicateFalse,
+    LLVMRealOEQ,
+    LLVMRealOGT,
+    LLVMRealOGE,
+    LLVMRealOLT,
+    LLVMRealOLE,
+    LLVMRealONE,
+    LLVMRealORD,
+    LLVMRealUNO,
+    LLVMRealUEQ,
+    LLVMRealUGT,
+    LLVMRealUGE,
+    LLVMRealULT,
+    LLVMRealULE,
+    LLVMRealUNE,
+    LLVMRealPredicateTrue,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.LLVMRealPredicateFalse" class="variant small-section-header"><a href="#variant.LLVMRealPredicateFalse" class="anchor field"></a><span id='LLVMRealPredicateFalse.v' class='invisible'><code>LLVMRealPredicateFalse</code></span></span><span id="variant.LLVMRealOEQ" class="variant small-section-header"><a href="#variant.LLVMRealOEQ" class="anchor field"></a><span id='LLVMRealOEQ.v' class='invisible'><code>LLVMRealOEQ</code></span></span><span id="variant.LLVMRealOGT" class="variant small-section-header"><a href="#variant.LLVMRealOGT" class="anchor field"></a><span id='LLVMRealOGT.v' class='invisible'><code>LLVMRealOGT</code></span></span><span id="variant.LLVMRealOGE" class="variant small-section-header"><a href="#variant.LLVMRealOGE" class="anchor field"></a><span id='LLVMRealOGE.v' class='invisible'><code>LLVMRealOGE</code></span></span><span id="variant.LLVMRealOLT" class="variant small-section-header"><a href="#variant.LLVMRealOLT" class="anchor field"></a><span id='LLVMRealOLT.v' class='invisible'><code>LLVMRealOLT</code></span></span><span id="variant.LLVMRealOLE" class="variant small-section-header"><a href="#variant.LLVMRealOLE" class="anchor field"></a><span id='LLVMRealOLE.v' class='invisible'><code>LLVMRealOLE</code></span></span><span id="variant.LLVMRealONE" class="variant small-section-header"><a href="#variant.LLVMRealONE" class="anchor field"></a><span id='LLVMRealONE.v' class='invisible'><code>LLVMRealONE</code></span></span><span id="variant.LLVMRealORD" class="variant small-section-header"><a href="#variant.LLVMRealORD" class="anchor field"></a><span id='LLVMRealORD.v' class='invisible'><code>LLVMRealORD</code></span></span><span id="variant.LLVMRealUNO" class="variant small-section-header"><a href="#variant.LLVMRealUNO" class="anchor field"></a><span id='LLVMRealUNO.v' class='invisible'><code>LLVMRealUNO</code></span></span><span id="variant.LLVMRealUEQ" class="variant small-section-header"><a href="#variant.LLVMRealUEQ" class="anchor field"></a><span id='LLVMRealUEQ.v' class='invisible'><code>LLVMRealUEQ</code></span></span><span id="variant.LLVMRealUGT" class="variant small-section-header"><a href="#variant.LLVMRealUGT" class="anchor field"></a><span id='LLVMRealUGT.v' class='invisible'><code>LLVMRealUGT</code></span></span><span id="variant.LLVMRealUGE" class="variant small-section-header"><a href="#variant.LLVMRealUGE" class="anchor field"></a><span id='LLVMRealUGE.v' class='invisible'><code>LLVMRealUGE</code></span></span><span id="variant.LLVMRealULT" class="variant small-section-header"><a href="#variant.LLVMRealULT" class="anchor field"></a><span id='LLVMRealULT.v' class='invisible'><code>LLVMRealULT</code></span></span><span id="variant.LLVMRealULE" class="variant small-section-header"><a href="#variant.LLVMRealULE" class="anchor field"></a><span id='LLVMRealULE.v' class='invisible'><code>LLVMRealULE</code></span></span><span id="variant.LLVMRealUNE" class="variant small-section-header"><a href="#variant.LLVMRealUNE" class="anchor field"></a><span id='LLVMRealUNE.v' class='invisible'><code>LLVMRealUNE</code></span></span><span id="variant.LLVMRealPredicateTrue" class="variant small-section-header"><a href="#variant.LLVMRealPredicateTrue" class="anchor field"></a><span id='LLVMRealPredicateTrue.v' class='invisible'><code>LLVMRealPredicateTrue</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "llvm_sys";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

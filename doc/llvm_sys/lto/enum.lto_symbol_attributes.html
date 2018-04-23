@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `lto_symbol_attributes` enum in crate `llvm_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, lto_symbol_attributes">
+
+    <title>llvm_sys::lto::lto_symbol_attributes - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum lto_symbol_attributes</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.LTO_SYMBOL_ALIGNMENT_MASK">LTO_SYMBOL_ALIGNMENT_MASK</a><a href="#variant.LTO_SYMBOL_PERMISSIONS_MASK">LTO_SYMBOL_PERMISSIONS_MASK</a><a href="#variant.LTO_SYMBOL_PERMISSIONS_CODE">LTO_SYMBOL_PERMISSIONS_CODE</a><a href="#variant.LTO_SYMBOL_PERMISSIONS_DATA">LTO_SYMBOL_PERMISSIONS_DATA</a><a href="#variant.LTO_SYMBOL_PERMISSIONS_RODATA">LTO_SYMBOL_PERMISSIONS_RODATA</a><a href="#variant.LTO_SYMBOL_DEFINITION_MASK">LTO_SYMBOL_DEFINITION_MASK</a><a href="#variant.LTO_SYMBOL_DEFINITION_REGULAR">LTO_SYMBOL_DEFINITION_REGULAR</a><a href="#variant.LTO_SYMBOL_DEFINITION_TENTATIVE">LTO_SYMBOL_DEFINITION_TENTATIVE</a><a href="#variant.LTO_SYMBOL_DEFINITION_WEAK">LTO_SYMBOL_DEFINITION_WEAK</a><a href="#variant.LTO_SYMBOL_DEFINITION_UNDEFINED">LTO_SYMBOL_DEFINITION_UNDEFINED</a><a href="#variant.LTO_SYMBOL_DEFINITION_WEAKUNDEF">LTO_SYMBOL_DEFINITION_WEAKUNDEF</a><a href="#variant.LTO_SYMBOL_SCOPE_MASK">LTO_SYMBOL_SCOPE_MASK</a><a href="#variant.LTO_SYMBOL_SCOPE_INTERNAL">LTO_SYMBOL_SCOPE_INTERNAL</a><a href="#variant.LTO_SYMBOL_SCOPE_HIDDEN">LTO_SYMBOL_SCOPE_HIDDEN</a><a href="#variant.LTO_SYMBOL_SCOPE_PROTECTED">LTO_SYMBOL_SCOPE_PROTECTED</a><a href="#variant.LTO_SYMBOL_SCOPE_DEFAULT">LTO_SYMBOL_SCOPE_DEFAULT</a><a href="#variant.LTO_SYMBOL_SCOPE_DEFAULT_CAN_BE_HIDDEN">LTO_SYMBOL_SCOPE_DEFAULT_CAN_BE_HIDDEN</a><a href="#variant.LTO_SYMBOL_COMDAT">LTO_SYMBOL_COMDAT</a><a href="#variant.LTO_SYMBOL_ALIAS">LTO_SYMBOL_ALIAS</a></div></div><p class='location'><a href='../index.html'>llvm_sys</a>::<wbr><a href='index.html'>lto</a></p><script>window.sidebarCurrent = {name: 'lto_symbol_attributes', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>llvm_sys</a>::<wbr><a href='index.html'>lto</a>::<wbr><a class="enum" href=''>lto_symbol_attributes</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/llvm_sys/lto.rs.html#11-33' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(C)]
+</div>pub enum lto_symbol_attributes {
+    LTO_SYMBOL_ALIGNMENT_MASK,
+    LTO_SYMBOL_PERMISSIONS_MASK,
+    LTO_SYMBOL_PERMISSIONS_CODE,
+    LTO_SYMBOL_PERMISSIONS_DATA,
+    LTO_SYMBOL_PERMISSIONS_RODATA,
+    LTO_SYMBOL_DEFINITION_MASK,
+    LTO_SYMBOL_DEFINITION_REGULAR,
+    LTO_SYMBOL_DEFINITION_TENTATIVE,
+    LTO_SYMBOL_DEFINITION_WEAK,
+    LTO_SYMBOL_DEFINITION_UNDEFINED,
+    LTO_SYMBOL_DEFINITION_WEAKUNDEF,
+    LTO_SYMBOL_SCOPE_MASK,
+    LTO_SYMBOL_SCOPE_INTERNAL,
+    LTO_SYMBOL_SCOPE_HIDDEN,
+    LTO_SYMBOL_SCOPE_PROTECTED,
+    LTO_SYMBOL_SCOPE_DEFAULT,
+    LTO_SYMBOL_SCOPE_DEFAULT_CAN_BE_HIDDEN,
+    LTO_SYMBOL_COMDAT,
+    LTO_SYMBOL_ALIAS,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.LTO_SYMBOL_ALIGNMENT_MASK" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_ALIGNMENT_MASK" class="anchor field"></a><span id='LTO_SYMBOL_ALIGNMENT_MASK.v' class='invisible'><code>LTO_SYMBOL_ALIGNMENT_MASK</code></span></span><span id="variant.LTO_SYMBOL_PERMISSIONS_MASK" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_PERMISSIONS_MASK" class="anchor field"></a><span id='LTO_SYMBOL_PERMISSIONS_MASK.v' class='invisible'><code>LTO_SYMBOL_PERMISSIONS_MASK</code></span></span><span id="variant.LTO_SYMBOL_PERMISSIONS_CODE" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_PERMISSIONS_CODE" class="anchor field"></a><span id='LTO_SYMBOL_PERMISSIONS_CODE.v' class='invisible'><code>LTO_SYMBOL_PERMISSIONS_CODE</code></span></span><span id="variant.LTO_SYMBOL_PERMISSIONS_DATA" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_PERMISSIONS_DATA" class="anchor field"></a><span id='LTO_SYMBOL_PERMISSIONS_DATA.v' class='invisible'><code>LTO_SYMBOL_PERMISSIONS_DATA</code></span></span><span id="variant.LTO_SYMBOL_PERMISSIONS_RODATA" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_PERMISSIONS_RODATA" class="anchor field"></a><span id='LTO_SYMBOL_PERMISSIONS_RODATA.v' class='invisible'><code>LTO_SYMBOL_PERMISSIONS_RODATA</code></span></span><span id="variant.LTO_SYMBOL_DEFINITION_MASK" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_DEFINITION_MASK" class="anchor field"></a><span id='LTO_SYMBOL_DEFINITION_MASK.v' class='invisible'><code>LTO_SYMBOL_DEFINITION_MASK</code></span></span><span id="variant.LTO_SYMBOL_DEFINITION_REGULAR" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_DEFINITION_REGULAR" class="anchor field"></a><span id='LTO_SYMBOL_DEFINITION_REGULAR.v' class='invisible'><code>LTO_SYMBOL_DEFINITION_REGULAR</code></span></span><span id="variant.LTO_SYMBOL_DEFINITION_TENTATIVE" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_DEFINITION_TENTATIVE" class="anchor field"></a><span id='LTO_SYMBOL_DEFINITION_TENTATIVE.v' class='invisible'><code>LTO_SYMBOL_DEFINITION_TENTATIVE</code></span></span><span id="variant.LTO_SYMBOL_DEFINITION_WEAK" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_DEFINITION_WEAK" class="anchor field"></a><span id='LTO_SYMBOL_DEFINITION_WEAK.v' class='invisible'><code>LTO_SYMBOL_DEFINITION_WEAK</code></span></span><span id="variant.LTO_SYMBOL_DEFINITION_UNDEFINED" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_DEFINITION_UNDEFINED" class="anchor field"></a><span id='LTO_SYMBOL_DEFINITION_UNDEFINED.v' class='invisible'><code>LTO_SYMBOL_DEFINITION_UNDEFINED</code></span></span><span id="variant.LTO_SYMBOL_DEFINITION_WEAKUNDEF" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_DEFINITION_WEAKUNDEF" class="anchor field"></a><span id='LTO_SYMBOL_DEFINITION_WEAKUNDEF.v' class='invisible'><code>LTO_SYMBOL_DEFINITION_WEAKUNDEF</code></span></span><span id="variant.LTO_SYMBOL_SCOPE_MASK" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_SCOPE_MASK" class="anchor field"></a><span id='LTO_SYMBOL_SCOPE_MASK.v' class='invisible'><code>LTO_SYMBOL_SCOPE_MASK</code></span></span><span id="variant.LTO_SYMBOL_SCOPE_INTERNAL" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_SCOPE_INTERNAL" class="anchor field"></a><span id='LTO_SYMBOL_SCOPE_INTERNAL.v' class='invisible'><code>LTO_SYMBOL_SCOPE_INTERNAL</code></span></span><span id="variant.LTO_SYMBOL_SCOPE_HIDDEN" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_SCOPE_HIDDEN" class="anchor field"></a><span id='LTO_SYMBOL_SCOPE_HIDDEN.v' class='invisible'><code>LTO_SYMBOL_SCOPE_HIDDEN</code></span></span><span id="variant.LTO_SYMBOL_SCOPE_PROTECTED" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_SCOPE_PROTECTED" class="anchor field"></a><span id='LTO_SYMBOL_SCOPE_PROTECTED.v' class='invisible'><code>LTO_SYMBOL_SCOPE_PROTECTED</code></span></span><span id="variant.LTO_SYMBOL_SCOPE_DEFAULT" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_SCOPE_DEFAULT" class="anchor field"></a><span id='LTO_SYMBOL_SCOPE_DEFAULT.v' class='invisible'><code>LTO_SYMBOL_SCOPE_DEFAULT</code></span></span><span id="variant.LTO_SYMBOL_SCOPE_DEFAULT_CAN_BE_HIDDEN" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_SCOPE_DEFAULT_CAN_BE_HIDDEN" class="anchor field"></a><span id='LTO_SYMBOL_SCOPE_DEFAULT_CAN_BE_HIDDEN.v' class='invisible'><code>LTO_SYMBOL_SCOPE_DEFAULT_CAN_BE_HIDDEN</code></span></span><span id="variant.LTO_SYMBOL_COMDAT" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_COMDAT" class="anchor field"></a><span id='LTO_SYMBOL_COMDAT.v' class='invisible'><code>LTO_SYMBOL_COMDAT</code></span></span><div class='docblock'><p>Added in LLVM 3.7.</p>
+</div><span id="variant.LTO_SYMBOL_ALIAS" class="variant small-section-header"><a href="#variant.LTO_SYMBOL_ALIAS" class="anchor field"></a><span id='LTO_SYMBOL_ALIAS.v' class='invisible'><code>LTO_SYMBOL_ALIAS</code></span></span><div class='docblock'><p>Added in LLVM 3.7.</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "llvm_sys";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

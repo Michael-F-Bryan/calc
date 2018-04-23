@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Target` struct in crate `inkwell`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Target">
+
+    <title>inkwell::targets::Target - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct Target</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.initialize_x86">initialize_x86</a><a href="#method.initialize_arm">initialize_arm</a><a href="#method.initialize_mips">initialize_mips</a><a href="#method.initialize_aarch64">initialize_aarch64</a><a href="#method.initialize_amd_gpu">initialize_amd_gpu</a><a href="#method.initialize_system_z">initialize_system_z</a><a href="#method.initialize_hexagon">initialize_hexagon</a><a href="#method.initialize_nvptx">initialize_nvptx</a><a href="#method.initialize_cpp_backend">initialize_cpp_backend</a><a href="#method.initialize_msp430">initialize_msp430</a><a href="#method.initialize_x_core">initialize_x_core</a><a href="#method.initialize_power_pc">initialize_power_pc</a><a href="#method.initialize_sparc">initialize_sparc</a><a href="#method.initialize_bpf">initialize_bpf</a><a href="#method.initialize_native">initialize_native</a><a href="#method.initialize_all">initialize_all</a><a href="#method.create_target_machine">create_target_machine</a><a href="#method.get_first">get_first</a><a href="#method.get_next">get_next</a><a href="#method.get_name">get_name</a><a href="#method.get_description">get_description</a><a href="#method.from_name">from_name</a><a href="#method.from_triple">from_triple</a><a href="#method.has_jit">has_jit</a><a href="#method.has_target_machine">has_target_machine</a><a href="#method.has_asm_backend">has_asm_backend</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>targets</a></p><script>window.sidebarCurrent = {name: 'Target', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>targets</a>::<wbr><a class="struct" href=''>Target</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/inkwell/targets.rs.html#79-81' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Target { /* fields omitted */ }</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../inkwell/targets/struct.Target.html" title="struct inkwell::targets::Target">Target</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#83-701' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.initialize_x86' class="method"><span id='initialize_x86.v' class='invisible'><code>pub fn <a href='#method.initialize_x86' class='fnname'>initialize_x86</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#93-121' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_arm' class="method"><span id='initialize_arm.v' class='invisible'><code>pub fn <a href='#method.initialize_arm' class='fnname'>initialize_arm</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#123-151' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_mips' class="method"><span id='initialize_mips.v' class='invisible'><code>pub fn <a href='#method.initialize_mips' class='fnname'>initialize_mips</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#153-181' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_aarch64' class="method"><span id='initialize_aarch64.v' class='invisible'><code>pub fn <a href='#method.initialize_aarch64' class='fnname'>initialize_aarch64</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#183-211' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_amd_gpu' class="method"><span id='initialize_amd_gpu.v' class='invisible'><code>pub fn <a href='#method.initialize_amd_gpu' class='fnname'>initialize_amd_gpu</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#243-267' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_system_z' class="method"><span id='initialize_system_z.v' class='invisible'><code>pub fn <a href='#method.initialize_system_z' class='fnname'>initialize_system_z</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#269-297' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_hexagon' class="method"><span id='initialize_hexagon.v' class='invisible'><code>pub fn <a href='#method.initialize_hexagon' class='fnname'>initialize_hexagon</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#299-323' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_nvptx' class="method"><span id='initialize_nvptx.v' class='invisible'><code>pub fn <a href='#method.initialize_nvptx' class='fnname'>initialize_nvptx</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#325-345' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_cpp_backend' class="method"><span id='initialize_cpp_backend.v' class='invisible'><code>pub fn <a href='#method.initialize_cpp_backend' class='fnname'>initialize_cpp_backend</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#348-364' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_msp430' class="method"><span id='initialize_msp430.v' class='invisible'><code>pub fn <a href='#method.initialize_msp430' class='fnname'>initialize_msp430</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#366-386' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_x_core' class="method"><span id='initialize_x_core.v' class='invisible'><code>pub fn <a href='#method.initialize_x_core' class='fnname'>initialize_x_core</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#388-412' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_power_pc' class="method"><span id='initialize_power_pc.v' class='invisible'><code>pub fn <a href='#method.initialize_power_pc' class='fnname'>initialize_power_pc</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#414-442' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_sparc' class="method"><span id='initialize_sparc.v' class='invisible'><code>pub fn <a href='#method.initialize_sparc' class='fnname'>initialize_sparc</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#444-472' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_bpf' class="method"><span id='initialize_bpf.v' class='invisible'><code>pub fn <a href='#method.initialize_bpf' class='fnname'>initialize_bpf</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#476-501' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_native' class="method"><span id='initialize_native.v' class='invisible'><code>pub fn <a href='#method.initialize_native' class='fnname'>initialize_native</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#503-547' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize_all' class="method"><span id='initialize_all.v' class='invisible'><code>pub fn <a href='#method.initialize_all' class='fnname'>initialize_all</a>(config: &amp;<a class="struct" href="../../inkwell/targets/struct.InitializationConfig.html" title="struct inkwell::targets::InitializationConfig">InitializationConfig</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#549-577' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.create_target_machine' class="method"><span id='create_target_machine.v' class='invisible'><code>pub fn <a href='#method.create_target_machine' class='fnname'>create_target_machine</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;triple: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cpu: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;features: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;level: <a class="enum" href="../../inkwell/enum.OptimizationLevel.html" title="enum inkwell::OptimizationLevel">OptimizationLevel</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;reloc_mode: <a class="enum" href="../../inkwell/targets/enum.RelocMode.html" title="enum inkwell::targets::RelocMode">RelocMode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;code_model: <a class="enum" href="../../inkwell/targets/enum.CodeModel.html" title="enum inkwell::targets::CodeModel">CodeModel</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../inkwell/targets/struct.TargetMachine.html" title="struct inkwell::targets::TargetMachine">TargetMachine</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#579-612' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_first' class="method"><span id='get_first.v' class='invisible'><code>pub fn <a href='#method.get_first' class='fnname'>get_first</a>() -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#614-624' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_next' class="method"><span id='get_next.v' class='invisible'><code>pub fn <a href='#method.get_next' class='fnname'>get_next</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../inkwell/targets/struct.Target.html" title="struct inkwell::targets::Target">Target</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#626-636' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_name' class="method"><span id='get_name.v' class='invisible'><code>pub fn <a href='#method.get_name' class='fnname'>get_name</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#638-642' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_description' class="method"><span id='get_description.v' class='invisible'><code>pub fn <a href='#method.get_description' class='fnname'>get_description</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#644-648' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.from_name' class="method"><span id='from_name.v' class='invisible'><code>pub fn <a href='#method.from_name' class='fnname'>from_name</a>(name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="../../inkwell/targets/struct.Target.html" title="struct inkwell::targets::Target">Target</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#650-658' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.from_triple' class="method"><span id='from_triple.v' class='invisible'><code>pub fn <a href='#method.from_triple' class='fnname'>from_triple</a>(triple: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../inkwell/targets/struct.Target.html" title="struct inkwell::targets::Target">Target</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#660-682' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_jit' class="method"><span id='has_jit.v' class='invisible'><code>pub fn <a href='#method.has_jit' class='fnname'>has_jit</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#684-688' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_target_machine' class="method"><span id='has_target_machine.v' class='invisible'><code>pub fn <a href='#method.has_target_machine' class='fnname'>has_target_machine</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#690-694' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_asm_backend' class="method"><span id='has_asm_backend.v' class='invisible'><code>pub fn <a href='#method.has_asm_backend' class='fnname'>has_asm_backend</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#696-700' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../inkwell/targets/struct.Target.html" title="struct inkwell::targets::Target">Target</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#78' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#78' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "inkwell";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PassManager` struct in crate `inkwell`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PassManager">
+
+    <title>inkwell::passes::PassManager - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct PassManager</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.create_for_module">create_for_module</a><a href="#method.create_for_function">create_for_function</a><a href="#method.initialize">initialize</a><a href="#method.finalize">finalize</a><a href="#method.run_on_function">run_on_function</a><a href="#method.run_on_module">run_on_module</a><a href="#method.add_target_data">add_target_data</a><a href="#method.add_argument_promotion_pass">add_argument_promotion_pass</a><a href="#method.add_constant_merge_pass">add_constant_merge_pass</a><a href="#method.add_dead_arg_elimination_pass">add_dead_arg_elimination_pass</a><a href="#method.add_function_attrs_pass">add_function_attrs_pass</a><a href="#method.add_function_inlining_pass">add_function_inlining_pass</a><a href="#method.add_always_inliner_pass">add_always_inliner_pass</a><a href="#method.add_global_dce_pass">add_global_dce_pass</a><a href="#method.add_global_optimizer_pass">add_global_optimizer_pass</a><a href="#method.add_ip_constant_propagation_pass">add_ip_constant_propagation_pass</a><a href="#method.add_prune_eh_pass">add_prune_eh_pass</a><a href="#method.add_ipsccp_pass">add_ipsccp_pass</a><a href="#method.add_interinalize_pass">add_interinalize_pass</a><a href="#method.add_strip_dead_prototypes_pass">add_strip_dead_prototypes_pass</a><a href="#method.add_strip_symbol_pass">add_strip_symbol_pass</a><a href="#method.add_bb_vectorize_pass">add_bb_vectorize_pass</a><a href="#method.add_loop_vectorize_pass">add_loop_vectorize_pass</a><a href="#method.add_slp_vectorize_pass">add_slp_vectorize_pass</a><a href="#method.add_aggressive_dce_pass">add_aggressive_dce_pass</a><a href="#method.add_bit_tracking_dce_pass">add_bit_tracking_dce_pass</a><a href="#method.add_alignment_from_assumptions_pass">add_alignment_from_assumptions_pass</a><a href="#method.add_cfg_simplification_pass">add_cfg_simplification_pass</a><a href="#method.add_dead_store_elimination_pass">add_dead_store_elimination_pass</a><a href="#method.add_scalarizer_pass">add_scalarizer_pass</a><a href="#method.add_merged_load_store_motion_pass">add_merged_load_store_motion_pass</a><a href="#method.add_gvn_pass">add_gvn_pass</a><a href="#method.add_ind_var_simplify_pass">add_ind_var_simplify_pass</a><a href="#method.add_instruction_combining_pass">add_instruction_combining_pass</a><a href="#method.add_jump_threading_pass">add_jump_threading_pass</a><a href="#method.add_licm_pass">add_licm_pass</a><a href="#method.add_loop_deletion_pass">add_loop_deletion_pass</a><a href="#method.add_loop_idiom_pass">add_loop_idiom_pass</a><a href="#method.add_loop_rotate_pass">add_loop_rotate_pass</a><a href="#method.add_loop_reroll_pass">add_loop_reroll_pass</a><a href="#method.add_loop_unroll_pass">add_loop_unroll_pass</a><a href="#method.add_loop_unswitch_pass">add_loop_unswitch_pass</a><a href="#method.add_memcpy_optimize_pass">add_memcpy_optimize_pass</a><a href="#method.add_partially_inline_lib_calls_pass">add_partially_inline_lib_calls_pass</a><a href="#method.add_lower_switch_pass">add_lower_switch_pass</a><a href="#method.add_promote_memory_to_register_pass">add_promote_memory_to_register_pass</a><a href="#method.add_reassociate_pass">add_reassociate_pass</a><a href="#method.add_sccp_pass">add_sccp_pass</a><a href="#method.add_scalar_repl_aggregates_pass">add_scalar_repl_aggregates_pass</a><a href="#method.add_scalar_repl_aggregates_pass_ssa">add_scalar_repl_aggregates_pass_ssa</a><a href="#method.add_scalar_repl_aggregates_pass_with_threshold">add_scalar_repl_aggregates_pass_with_threshold</a><a href="#method.add_simplify_lib_calls_pass">add_simplify_lib_calls_pass</a><a href="#method.add_tail_call_elimination_pass">add_tail_call_elimination_pass</a><a href="#method.add_constant_propagation_pass">add_constant_propagation_pass</a><a href="#method.add_demote_memory_to_register_pass">add_demote_memory_to_register_pass</a><a href="#method.add_verifier_pass">add_verifier_pass</a><a href="#method.add_correlated_value_propagation_pass">add_correlated_value_propagation_pass</a><a href="#method.add_early_cse_pass">add_early_cse_pass</a><a href="#method.add_lower_expect_intrinsic_pass">add_lower_expect_intrinsic_pass</a><a href="#method.add_type_based_alias_analysis_pass">add_type_based_alias_analysis_pass</a><a href="#method.add_scoped_no_alias_aa_pass">add_scoped_no_alias_aa_pass</a><a href="#method.add_basic_alias_analysis_pass">add_basic_alias_analysis_pass</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-Drop">Drop</a></div></div><p class='location'><a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>passes</a></p><script>window.sidebarCurrent = {name: 'PassManager', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>passes</a>::<wbr><a class="struct" href=''>PassManager</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/inkwell/passes.rs.html#111-113' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PassManager { /* fields omitted */ }</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../inkwell/passes/struct.PassManager.html" title="struct inkwell::passes::PassManager">PassManager</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#115-519' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.create_for_module' class="method"><span id='create_for_module.v' class='invisible'><code>pub fn <a href='#method.create_for_module' class='fnname'>create_for_module</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#125-131' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.create_for_function' class="method"><span id='create_for_function.v' class='invisible'><code>pub fn <a href='#method.create_for_function' class='fnname'>create_for_function</a>(module: &amp;<a class="struct" href="../../inkwell/module/struct.Module.html" title="struct inkwell::module::Module">Module</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#134-140' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.initialize' class="method"><span id='initialize.v' class='invisible'><code>pub fn <a href='#method.initialize' class='fnname'>initialize</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#143-147' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.finalize' class="method"><span id='finalize.v' class='invisible'><code>pub fn <a href='#method.finalize' class='fnname'>finalize</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#149-153' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.run_on_function' class="method"><span id='run_on_function.v' class='invisible'><code>pub fn <a href='#method.run_on_function' class='fnname'>run_on_function</a>(&amp;self, fn_value: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#155-159' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.run_on_module' class="method"><span id='run_on_module.v' class='invisible'><code>pub fn <a href='#method.run_on_module' class='fnname'>run_on_module</a>(&amp;self, module: &amp;<a class="struct" href="../../inkwell/module/struct.Module.html" title="struct inkwell::module::Module">Module</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#161-165' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_target_data' class="method"><span id='add_target_data.v' class='invisible'><code>pub fn <a href='#method.add_target_data' class='fnname'>add_target_data</a>(&amp;self, target_data: &amp;<a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#168-172' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_argument_promotion_pass' class="method"><span id='add_argument_promotion_pass.v' class='invisible'><code>pub fn <a href='#method.add_argument_promotion_pass' class='fnname'>add_argument_promotion_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#174-178' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_constant_merge_pass' class="method"><span id='add_constant_merge_pass.v' class='invisible'><code>pub fn <a href='#method.add_constant_merge_pass' class='fnname'>add_constant_merge_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#180-184' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_dead_arg_elimination_pass' class="method"><span id='add_dead_arg_elimination_pass.v' class='invisible'><code>pub fn <a href='#method.add_dead_arg_elimination_pass' class='fnname'>add_dead_arg_elimination_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#186-190' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_function_attrs_pass' class="method"><span id='add_function_attrs_pass.v' class='invisible'><code>pub fn <a href='#method.add_function_attrs_pass' class='fnname'>add_function_attrs_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#192-196' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_function_inlining_pass' class="method"><span id='add_function_inlining_pass.v' class='invisible'><code>pub fn <a href='#method.add_function_inlining_pass' class='fnname'>add_function_inlining_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#198-202' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_always_inliner_pass' class="method"><span id='add_always_inliner_pass.v' class='invisible'><code>pub fn <a href='#method.add_always_inliner_pass' class='fnname'>add_always_inliner_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#204-208' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_global_dce_pass' class="method"><span id='add_global_dce_pass.v' class='invisible'><code>pub fn <a href='#method.add_global_dce_pass' class='fnname'>add_global_dce_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#210-214' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_global_optimizer_pass' class="method"><span id='add_global_optimizer_pass.v' class='invisible'><code>pub fn <a href='#method.add_global_optimizer_pass' class='fnname'>add_global_optimizer_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#216-220' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_ip_constant_propagation_pass' class="method"><span id='add_ip_constant_propagation_pass.v' class='invisible'><code>pub fn <a href='#method.add_ip_constant_propagation_pass' class='fnname'>add_ip_constant_propagation_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#222-226' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_prune_eh_pass' class="method"><span id='add_prune_eh_pass.v' class='invisible'><code>pub fn <a href='#method.add_prune_eh_pass' class='fnname'>add_prune_eh_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#228-232' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_ipsccp_pass' class="method"><span id='add_ipsccp_pass.v' class='invisible'><code>pub fn <a href='#method.add_ipsccp_pass' class='fnname'>add_ipsccp_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#234-238' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_interinalize_pass' class="method"><span id='add_interinalize_pass.v' class='invisible'><code>pub fn <a href='#method.add_interinalize_pass' class='fnname'>add_interinalize_pass</a>(&amp;self, all_but_main: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#241-245' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_strip_dead_prototypes_pass' class="method"><span id='add_strip_dead_prototypes_pass.v' class='invisible'><code>pub fn <a href='#method.add_strip_dead_prototypes_pass' class='fnname'>add_strip_dead_prototypes_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#247-251' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_strip_symbol_pass' class="method"><span id='add_strip_symbol_pass.v' class='invisible'><code>pub fn <a href='#method.add_strip_symbol_pass' class='fnname'>add_strip_symbol_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#253-257' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_bb_vectorize_pass' class="method"><span id='add_bb_vectorize_pass.v' class='invisible'><code>pub fn <a href='#method.add_bb_vectorize_pass' class='fnname'>add_bb_vectorize_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#259-263' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_loop_vectorize_pass' class="method"><span id='add_loop_vectorize_pass.v' class='invisible'><code>pub fn <a href='#method.add_loop_vectorize_pass' class='fnname'>add_loop_vectorize_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#265-269' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_slp_vectorize_pass' class="method"><span id='add_slp_vectorize_pass.v' class='invisible'><code>pub fn <a href='#method.add_slp_vectorize_pass' class='fnname'>add_slp_vectorize_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#271-275' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_aggressive_dce_pass' class="method"><span id='add_aggressive_dce_pass.v' class='invisible'><code>pub fn <a href='#method.add_aggressive_dce_pass' class='fnname'>add_aggressive_dce_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#277-281' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_bit_tracking_dce_pass' class="method"><span id='add_bit_tracking_dce_pass.v' class='invisible'><code>pub fn <a href='#method.add_bit_tracking_dce_pass' class='fnname'>add_bit_tracking_dce_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#284-288' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_alignment_from_assumptions_pass' class="method"><span id='add_alignment_from_assumptions_pass.v' class='invisible'><code>pub fn <a href='#method.add_alignment_from_assumptions_pass' class='fnname'>add_alignment_from_assumptions_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#290-294' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_cfg_simplification_pass' class="method"><span id='add_cfg_simplification_pass.v' class='invisible'><code>pub fn <a href='#method.add_cfg_simplification_pass' class='fnname'>add_cfg_simplification_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#296-300' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_dead_store_elimination_pass' class="method"><span id='add_dead_store_elimination_pass.v' class='invisible'><code>pub fn <a href='#method.add_dead_store_elimination_pass' class='fnname'>add_dead_store_elimination_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#302-306' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_scalarizer_pass' class="method"><span id='add_scalarizer_pass.v' class='invisible'><code>pub fn <a href='#method.add_scalarizer_pass' class='fnname'>add_scalarizer_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#308-312' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_merged_load_store_motion_pass' class="method"><span id='add_merged_load_store_motion_pass.v' class='invisible'><code>pub fn <a href='#method.add_merged_load_store_motion_pass' class='fnname'>add_merged_load_store_motion_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#314-318' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_gvn_pass' class="method"><span id='add_gvn_pass.v' class='invisible'><code>pub fn <a href='#method.add_gvn_pass' class='fnname'>add_gvn_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#320-324' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_ind_var_simplify_pass' class="method"><span id='add_ind_var_simplify_pass.v' class='invisible'><code>pub fn <a href='#method.add_ind_var_simplify_pass' class='fnname'>add_ind_var_simplify_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#333-337' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_instruction_combining_pass' class="method"><span id='add_instruction_combining_pass.v' class='invisible'><code>pub fn <a href='#method.add_instruction_combining_pass' class='fnname'>add_instruction_combining_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#339-343' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_jump_threading_pass' class="method"><span id='add_jump_threading_pass.v' class='invisible'><code>pub fn <a href='#method.add_jump_threading_pass' class='fnname'>add_jump_threading_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#345-349' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_licm_pass' class="method"><span id='add_licm_pass.v' class='invisible'><code>pub fn <a href='#method.add_licm_pass' class='fnname'>add_licm_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#351-355' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_loop_deletion_pass' class="method"><span id='add_loop_deletion_pass.v' class='invisible'><code>pub fn <a href='#method.add_loop_deletion_pass' class='fnname'>add_loop_deletion_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#357-361' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_loop_idiom_pass' class="method"><span id='add_loop_idiom_pass.v' class='invisible'><code>pub fn <a href='#method.add_loop_idiom_pass' class='fnname'>add_loop_idiom_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#363-367' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_loop_rotate_pass' class="method"><span id='add_loop_rotate_pass.v' class='invisible'><code>pub fn <a href='#method.add_loop_rotate_pass' class='fnname'>add_loop_rotate_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#369-373' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_loop_reroll_pass' class="method"><span id='add_loop_reroll_pass.v' class='invisible'><code>pub fn <a href='#method.add_loop_reroll_pass' class='fnname'>add_loop_reroll_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#375-379' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_loop_unroll_pass' class="method"><span id='add_loop_unroll_pass.v' class='invisible'><code>pub fn <a href='#method.add_loop_unroll_pass' class='fnname'>add_loop_unroll_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#381-385' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_loop_unswitch_pass' class="method"><span id='add_loop_unswitch_pass.v' class='invisible'><code>pub fn <a href='#method.add_loop_unswitch_pass' class='fnname'>add_loop_unswitch_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#387-391' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_memcpy_optimize_pass' class="method"><span id='add_memcpy_optimize_pass.v' class='invisible'><code>pub fn <a href='#method.add_memcpy_optimize_pass' class='fnname'>add_memcpy_optimize_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#393-397' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_partially_inline_lib_calls_pass' class="method"><span id='add_partially_inline_lib_calls_pass.v' class='invisible'><code>pub fn <a href='#method.add_partially_inline_lib_calls_pass' class='fnname'>add_partially_inline_lib_calls_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#399-403' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_lower_switch_pass' class="method"><span id='add_lower_switch_pass.v' class='invisible'><code>pub fn <a href='#method.add_lower_switch_pass' class='fnname'>add_lower_switch_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#405-409' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_promote_memory_to_register_pass' class="method"><span id='add_promote_memory_to_register_pass.v' class='invisible'><code>pub fn <a href='#method.add_promote_memory_to_register_pass' class='fnname'>add_promote_memory_to_register_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#411-415' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_reassociate_pass' class="method"><span id='add_reassociate_pass.v' class='invisible'><code>pub fn <a href='#method.add_reassociate_pass' class='fnname'>add_reassociate_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#417-421' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_sccp_pass' class="method"><span id='add_sccp_pass.v' class='invisible'><code>pub fn <a href='#method.add_sccp_pass' class='fnname'>add_sccp_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#423-427' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_scalar_repl_aggregates_pass' class="method"><span id='add_scalar_repl_aggregates_pass.v' class='invisible'><code>pub fn <a href='#method.add_scalar_repl_aggregates_pass' class='fnname'>add_scalar_repl_aggregates_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#429-433' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_scalar_repl_aggregates_pass_ssa' class="method"><span id='add_scalar_repl_aggregates_pass_ssa.v' class='invisible'><code>pub fn <a href='#method.add_scalar_repl_aggregates_pass_ssa' class='fnname'>add_scalar_repl_aggregates_pass_ssa</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#435-439' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_scalar_repl_aggregates_pass_with_threshold' class="method"><span id='add_scalar_repl_aggregates_pass_with_threshold.v' class='invisible'><code>pub fn <a href='#method.add_scalar_repl_aggregates_pass_with_threshold' class='fnname'>add_scalar_repl_aggregates_pass_with_threshold</a>(&amp;self, threshold: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#441-445' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_simplify_lib_calls_pass' class="method"><span id='add_simplify_lib_calls_pass.v' class='invisible'><code>pub fn <a href='#method.add_simplify_lib_calls_pass' class='fnname'>add_simplify_lib_calls_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#447-451' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_tail_call_elimination_pass' class="method"><span id='add_tail_call_elimination_pass.v' class='invisible'><code>pub fn <a href='#method.add_tail_call_elimination_pass' class='fnname'>add_tail_call_elimination_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#453-457' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_constant_propagation_pass' class="method"><span id='add_constant_propagation_pass.v' class='invisible'><code>pub fn <a href='#method.add_constant_propagation_pass' class='fnname'>add_constant_propagation_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#459-463' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_demote_memory_to_register_pass' class="method"><span id='add_demote_memory_to_register_pass.v' class='invisible'><code>pub fn <a href='#method.add_demote_memory_to_register_pass' class='fnname'>add_demote_memory_to_register_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#465-469' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_verifier_pass' class="method"><span id='add_verifier_pass.v' class='invisible'><code>pub fn <a href='#method.add_verifier_pass' class='fnname'>add_verifier_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#471-475' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_correlated_value_propagation_pass' class="method"><span id='add_correlated_value_propagation_pass.v' class='invisible'><code>pub fn <a href='#method.add_correlated_value_propagation_pass' class='fnname'>add_correlated_value_propagation_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#477-481' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_early_cse_pass' class="method"><span id='add_early_cse_pass.v' class='invisible'><code>pub fn <a href='#method.add_early_cse_pass' class='fnname'>add_early_cse_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#483-487' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_lower_expect_intrinsic_pass' class="method"><span id='add_lower_expect_intrinsic_pass.v' class='invisible'><code>pub fn <a href='#method.add_lower_expect_intrinsic_pass' class='fnname'>add_lower_expect_intrinsic_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#496-500' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_type_based_alias_analysis_pass' class="method"><span id='add_type_based_alias_analysis_pass.v' class='invisible'><code>pub fn <a href='#method.add_type_based_alias_analysis_pass' class='fnname'>add_type_based_alias_analysis_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#502-506' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_scoped_no_alias_aa_pass' class="method"><span id='add_scoped_no_alias_aa_pass.v' class='invisible'><code>pub fn <a href='#method.add_scoped_no_alias_aa_pass' class='fnname'>add_scoped_no_alias_aa_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#508-512' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_basic_alias_analysis_pass' class="method"><span id='add_basic_alias_analysis_pass.v' class='invisible'><code>pub fn <a href='#method.add_basic_alias_analysis_pass' class='fnname'>add_basic_alias_analysis_pass</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#514-518' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../inkwell/passes/struct.PassManager.html" title="struct inkwell::passes::PassManager">PassManager</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#110' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#110' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Drop' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="../../inkwell/passes/struct.PassManager.html" title="struct inkwell::passes::PassManager">PassManager</a></code><a href='#impl-Drop' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#521-527' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class="method"><span id='drop.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/passes.rs.html#522-526' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the destructor for this type. <a href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "inkwell";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

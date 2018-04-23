@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FunctionValue` struct in crate `inkwell`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FunctionValue">
+
+    <title>inkwell::values::FunctionValue - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct FunctionValue</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.get_linkage">get_linkage</a><a href="#method.is_null">is_null</a><a href="#method.is_undef">is_undef</a><a href="#method.print_to_string">print_to_string</a><a href="#method.print_to_stderr">print_to_stderr</a><a href="#method.verify">verify</a><a href="#method.get_next_function">get_next_function</a><a href="#method.get_previous_function">get_previous_function</a><a href="#method.get_first_param">get_first_param</a><a href="#method.get_last_param">get_last_param</a><a href="#method.get_entry_basic_block">get_entry_basic_block</a><a href="#method.get_first_basic_block">get_first_basic_block</a><a href="#method.append_basic_block">append_basic_block</a><a href="#method.get_nth_param">get_nth_param</a><a href="#method.count_params">count_params</a><a href="#method.count_basic_blocks">count_basic_blocks</a><a href="#method.get_basic_blocks">get_basic_blocks</a><a href="#method.get_return_type">get_return_type</a><a href="#method.params">params</a><a href="#method.get_last_basic_block">get_last_basic_block</a><a href="#method.get_name">get_name</a><a href="#method.view_function_config">view_function_config</a><a href="#method.view_function_config_only">view_function_config_only</a><a href="#method.delete">delete</a><a href="#method.get_type">get_type</a><a href="#method.has_metadata">has_metadata</a><a href="#method.get_metadata">get_metadata</a><a href="#method.set_metadata">set_metadata</a><a href="#method.get_personality_function">get_personality_function</a><a href="#method.set_personality_function">set_personality_function</a><a href="#method.get_intrinsic_id">get_intrinsic_id</a><a href="#method.get_call_conventions">get_call_conventions</a><a href="#method.set_call_conventions">set_call_conventions</a><a href="#method.get_gc">get_gc</a><a href="#method.set_gc">set_gc</a><a href="#method.replace_all_uses_with">replace_all_uses_with</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-From%3CFunctionValue%3E">From&lt;FunctionValue&gt;</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Eq">Eq</a><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Debug">Debug</a><a href="#impl-AnyValue">AnyValue</a></div></div><p class='location'><a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>values</a></p><script>window.sidebarCurrent = {name: 'FunctionValue', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>values</a>::<wbr><a class="struct" href=''>FunctionValue</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#18-20' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct FunctionValue { /* fields omitted */ }</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#22-315' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_linkage' class="method"><span id='get_linkage.v' class='invisible'><code>pub fn <a href='#method.get_linkage' class='fnname'>get_linkage</a>(&amp;self) -&gt; <a class="enum" href="../../inkwell/module/enum.Linkage.html" title="enum inkwell::module::Linkage">Linkage</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#35-41' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_null' class="method"><span id='is_null.v' class='invisible'><code>pub fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#43-45' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_undef' class="method"><span id='is_undef.v' class='invisible'><code>pub fn <a href='#method.is_undef' class='fnname'>is_undef</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#47-49' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.print_to_string' class="method"><span id='print_to_string.v' class='invisible'><code>pub fn <a href='#method.print_to_string' class='fnname'>print_to_string</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#51-53' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.print_to_stderr' class="method"><span id='print_to_stderr.v' class='invisible'><code>pub fn <a href='#method.print_to_stderr' class='fnname'>print_to_stderr</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#55-57' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.verify' class="method"><span id='verify.v' class='invisible'><code>pub fn <a href='#method.verify' class='fnname'>verify</a>(&amp;self, print: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#61-73' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_next_function' class="method"><span id='get_next_function.v' class='invisible'><code>pub fn <a href='#method.get_next_function' class='fnname'>get_next_function</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#76-82' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_previous_function' class="method"><span id='get_previous_function.v' class='invisible'><code>pub fn <a href='#method.get_previous_function' class='fnname'>get_previous_function</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#84-90' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_first_param' class="method"><span id='get_first_param.v' class='invisible'><code>pub fn <a href='#method.get_first_param' class='fnname'>get_first_param</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../inkwell/values/enum.BasicValueEnum.html" title="enum inkwell::values::BasicValueEnum">BasicValueEnum</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#92-102' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_last_param' class="method"><span id='get_last_param.v' class='invisible'><code>pub fn <a href='#method.get_last_param' class='fnname'>get_last_param</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../inkwell/values/enum.BasicValueEnum.html" title="enum inkwell::values::BasicValueEnum">BasicValueEnum</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#104-114' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_entry_basic_block' class="method"><span id='get_entry_basic_block.v' class='invisible'><code>pub fn <a href='#method.get_entry_basic_block' class='fnname'>get_entry_basic_block</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../inkwell/basic_block/struct.BasicBlock.html" title="struct inkwell::basic_block::BasicBlock">BasicBlock</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#120-126' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_first_basic_block' class="method"><span id='get_first_basic_block.v' class='invisible'><code>pub fn <a href='#method.get_first_basic_block' class='fnname'>get_first_basic_block</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../inkwell/basic_block/struct.BasicBlock.html" title="struct inkwell::basic_block::BasicBlock">BasicBlock</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#132-138' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.append_basic_block' class="method"><span id='append_basic_block.v' class='invisible'><code>pub fn <a href='#method.append_basic_block' class='fnname'>append_basic_block</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="../../inkwell/basic_block/struct.BasicBlock.html" title="struct inkwell::basic_block::BasicBlock">BasicBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#142-150' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_nth_param' class="method"><span id='get_nth_param.v' class='invisible'><code>pub fn <a href='#method.get_nth_param' class='fnname'>get_nth_param</a>(&amp;self, nth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../../inkwell/values/enum.BasicValueEnum.html" title="enum inkwell::values::BasicValueEnum">BasicValueEnum</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#152-164' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.count_params' class="method"><span id='count_params.v' class='invisible'><code>pub fn <a href='#method.count_params' class='fnname'>count_params</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#166-170' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.count_basic_blocks' class="method"><span id='count_basic_blocks.v' class='invisible'><code>pub fn <a href='#method.count_basic_blocks' class='fnname'>count_basic_blocks</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#172-176' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_basic_blocks' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><span id='get_basic_blocks.v' class='invisible'><code>pub fn <a href='#method.get_basic_blocks' class='fnname'>get_basic_blocks</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../../inkwell/basic_block/struct.BasicBlock.html" title="struct inkwell::basic_block::BasicBlock">BasicBlock</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#178-192' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_return_type' class="method"><span id='get_return_type.v' class='invisible'><code>pub fn <a href='#method.get_return_type' class='fnname'>get_return_type</a>(&amp;self) -&gt; <a class="enum" href="../../inkwell/types/enum.BasicTypeEnum.html" title="enum inkwell::types::BasicTypeEnum">BasicTypeEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#194-200' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.params' class="method"><span id='params.v' class='invisible'><code>pub fn <a href='#method.params' class='fnname'>params</a>(&amp;self) -&gt; ParamValueIter</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#202-207' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_last_basic_block' class="method"><span id='get_last_basic_block.v' class='invisible'><code>pub fn <a href='#method.get_last_basic_block' class='fnname'>get_last_basic_block</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../inkwell/basic_block/struct.BasicBlock.html" title="struct inkwell::basic_block::BasicBlock">BasicBlock</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#209-215' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_name' class="method"><span id='get_name.v' class='invisible'><code>pub fn <a href='#method.get_name' class='fnname'>get_name</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#217-219' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.view_function_config' class="method"><span id='view_function_config.v' class='invisible'><code>pub fn <a href='#method.view_function_config' class='fnname'>view_function_config</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#221-225' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.view_function_config_only' class="method"><span id='view_function_config_only.v' class='invisible'><code>pub fn <a href='#method.view_function_config_only' class='fnname'>view_function_config_only</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#227-231' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.delete' class="method"><span id='delete.v' class='invisible'><code>pub unsafe fn <a href='#method.delete' class='fnname'>delete</a>(self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#234-238' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_type' class="method"><span id='get_type.v' class='invisible'><code>pub fn <a href='#method.get_type' class='fnname'>get_type</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/types/struct.FunctionType.html" title="struct inkwell::types::FunctionType">FunctionType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#240-242' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.has_metadata' class="method"><span id='has_metadata.v' class='invisible'><code>pub fn <a href='#method.has_metadata' class='fnname'>has_metadata</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#244-246' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_metadata' class="method"><span id='get_metadata.v' class='invisible'><code>pub fn <a href='#method.get_metadata' class='fnname'>get_metadata</a>(&amp;self, kind_id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#248-250' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_metadata' class="method"><span id='set_metadata.v' class='invisible'><code>pub fn <a href='#method.set_metadata' class='fnname'>set_metadata</a>(&amp;self, metadata: &amp;<a class="struct" href="../../inkwell/values/struct.MetadataValue.html" title="struct inkwell::values::MetadataValue">MetadataValue</a>, kind_id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#252-254' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_personality_function' class="method"><span id='get_personality_function.v' class='invisible'><code>pub fn <a href='#method.get_personality_function' class='fnname'>get_personality_function</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#265-271' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_personality_function' class="method"><span id='set_personality_function.v' class='invisible'><code>pub fn <a href='#method.set_personality_function' class='fnname'>set_personality_function</a>(&amp;self, personality_fn: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#274-278' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_intrinsic_id' class="method"><span id='get_intrinsic_id.v' class='invisible'><code>pub fn <a href='#method.get_intrinsic_id' class='fnname'>get_intrinsic_id</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#280-284' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_call_conventions' class="method"><span id='get_call_conventions.v' class='invisible'><code>pub fn <a href='#method.get_call_conventions' class='fnname'>get_call_conventions</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#286-290' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_call_conventions' class="method"><span id='set_call_conventions.v' class='invisible'><code>pub fn <a href='#method.set_call_conventions' class='fnname'>set_call_conventions</a>(&amp;self, call_conventions: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#292-296' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_gc' class="method"><span id='get_gc.v' class='invisible'><code>pub fn <a href='#method.get_gc' class='fnname'>get_gc</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/c_str/struct.CStr.html" title="struct std::ffi::c_str::CStr">CStr</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#298-302' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_gc' class="method"><span id='set_gc.v' class='invisible'><code>pub fn <a href='#method.set_gc' class='fnname'>set_gc</a>(&amp;self, gc: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#304-310' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.replace_all_uses_with' class="method"><span id='replace_all_uses_with.v' class='invisible'><code>pub fn <a href='#method.replace_all_uses_with' class='fnname'>replace_all_uses_with</a>(&amp;self, other: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#312-314' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-From%3CFunctionValue%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>&gt; for <a class="enum" href="../../inkwell/values/enum.AnyValueEnum.html" title="enum inkwell::values::AnyValueEnum">AnyValueEnum</a></code><a href='#impl-From%3CFunctionValue%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(value: <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>) -&gt; <a class="enum" href="../../inkwell/values/enum.AnyValueEnum.html" title="enum inkwell::values::AnyValueEnum">AnyValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/enums.rs.html#30-32' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#17' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#17' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#17' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#17' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#17' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#17' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#17' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#323-342' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/fn_value.rs.html#324-341' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-AnyValue' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../inkwell/values/trait.AnyValue.html" title="trait inkwell::values::AnyValue">AnyValue</a> for <a class="struct" href="../../inkwell/values/struct.FunctionValue.html" title="struct inkwell::values::FunctionValue">FunctionValue</a></code><a href='#impl-AnyValue' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/traits.rs.html#17' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_any_value_enum' class="method"><span id='as_any_value_enum.v' class='invisible'><code>fn <a href='../../inkwell/values/trait.AnyValue.html#method.as_any_value_enum' class='fnname'>as_any_value_enum</a>(&amp;self) -&gt; <a class="enum" href="../../inkwell/values/enum.AnyValueEnum.html" title="enum inkwell::values::AnyValueEnum">AnyValueEnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/values/traits.rs.html#44-46' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an enum containing a typed version of <code>AnyValue</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "inkwell";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `scalar` mod in crate `llvm_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, scalar">
+
+    <title>llvm_sys::transforms::scalar - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <script src="../../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Module scalar</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../../index.html'>llvm_sys</a>::<wbr><a href='../index.html'>transforms</a></p><script>window.sidebarCurrent = {name: 'scalar', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>llvm_sys</a>::<wbr><a href='../index.html'>transforms</a>::<wbr><a class="mod" href=''>scalar</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/llvm_sys/transforms/scalar.rs.html#1-47' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Scalar transformations of LLVM IR.</p>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddAggressiveDCEPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddAggressiveDCEPass'>LLVMAddAggressiveDCEPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddAlignmentFromAssumptionsPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddAlignmentFromAssumptionsPass'>LLVMAddAlignmentFromAssumptionsPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddBasicAliasAnalysisPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddBasicAliasAnalysisPass'>LLVMAddBasicAliasAnalysisPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddBitTrackingDCEPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddBitTrackingDCEPass'>LLVMAddBitTrackingDCEPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Added in LLVM 3.7.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddCFGSimplificationPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddCFGSimplificationPass'>LLVMAddCFGSimplificationPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddConstantPropagationPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddConstantPropagationPass'>LLVMAddConstantPropagationPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddCorrelatedValuePropagationPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddCorrelatedValuePropagationPass'>LLVMAddCorrelatedValuePropagationPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddDeadStoreEliminationPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddDeadStoreEliminationPass'>LLVMAddDeadStoreEliminationPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddDemoteMemoryToRegisterPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddDemoteMemoryToRegisterPass'>LLVMAddDemoteMemoryToRegisterPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddEarlyCSEPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddEarlyCSEPass'>LLVMAddEarlyCSEPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddGVNPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddGVNPass'>LLVMAddGVNPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddIndVarSimplifyPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddIndVarSimplifyPass'>LLVMAddIndVarSimplifyPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddInstructionCombiningPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddInstructionCombiningPass'>LLVMAddInstructionCombiningPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddJumpThreadingPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddJumpThreadingPass'>LLVMAddJumpThreadingPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLICMPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLICMPass'>LLVMAddLICMPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLoopDeletionPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLoopDeletionPass'>LLVMAddLoopDeletionPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLoopIdiomPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLoopIdiomPass'>LLVMAddLoopIdiomPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLoopRerollPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLoopRerollPass'>LLVMAddLoopRerollPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLoopRotatePass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLoopRotatePass'>LLVMAddLoopRotatePass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLoopUnrollPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLoopUnrollPass'>LLVMAddLoopUnrollPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLoopUnswitchPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLoopUnswitchPass'>LLVMAddLoopUnswitchPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLowerExpectIntrinsicPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLowerExpectIntrinsicPass'>LLVMAddLowerExpectIntrinsicPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddLowerSwitchPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddLowerSwitchPass'>LLVMAddLowerSwitchPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddMemCpyOptPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddMemCpyOptPass'>LLVMAddMemCpyOptPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddMergedLoadStoreMotionPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddMergedLoadStoreMotionPass'>LLVMAddMergedLoadStoreMotionPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddPartiallyInlineLibCallsPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddPartiallyInlineLibCallsPass'>LLVMAddPartiallyInlineLibCallsPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddPromoteMemoryToRegisterPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddPromoteMemoryToRegisterPass'>LLVMAddPromoteMemoryToRegisterPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddReassociatePass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddReassociatePass'>LLVMAddReassociatePass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddSCCPPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddSCCPPass'>LLVMAddSCCPPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddScalarReplAggregatesPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddScalarReplAggregatesPass'>LLVMAddScalarReplAggregatesPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddScalarReplAggregatesPassSSA.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddScalarReplAggregatesPassSSA'>LLVMAddScalarReplAggregatesPassSSA</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddScalarReplAggregatesPassWithThreshold.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddScalarReplAggregatesPassWithThreshold'>LLVMAddScalarReplAggregatesPassWithThreshold</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddScalarizerPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddScalarizerPass'>LLVMAddScalarizerPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddScopedNoAliasAAPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddScopedNoAliasAAPass'>LLVMAddScopedNoAliasAAPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddSimplifyLibCallsPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddSimplifyLibCallsPass'>LLVMAddSimplifyLibCallsPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddTailCallEliminationPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddTailCallEliminationPass'>LLVMAddTailCallEliminationPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddTypeBasedAliasAnalysisPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddTypeBasedAliasAnalysisPass'>LLVMAddTypeBasedAliasAnalysisPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddVerifierPass.html"
+                                  title='fn llvm_sys::transforms::scalar::LLVMAddVerifierPass'>LLVMAddVerifierPass</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "llvm_sys";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `llvm_lto_status_t` enum in crate `llvm_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, llvm_lto_status_t">
+
+    <title>llvm_sys::link_time_optimizer::llvm_lto_status_t - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum llvm_lto_status_t</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.LLVM_LTO_UNKNOWN">LLVM_LTO_UNKNOWN</a><a href="#variant.LLVM_LTO_OPT_SUCCESS">LLVM_LTO_OPT_SUCCESS</a><a href="#variant.LLVM_LTO_READ_SUCCESS">LLVM_LTO_READ_SUCCESS</a><a href="#variant.LLVM_LTO_READ_FAILURE">LLVM_LTO_READ_FAILURE</a><a href="#variant.LLVM_LTO_WRITE_FAILURE">LLVM_LTO_WRITE_FAILURE</a><a href="#variant.LLVM_LTO_NO_TARGET">LLVM_LTO_NO_TARGET</a><a href="#variant.LLVM_LTO_NO_WORK">LLVM_LTO_NO_WORK</a><a href="#variant.LLVM_LTO_MODULE_MERGE_FAILURE">LLVM_LTO_MODULE_MERGE_FAILURE</a><a href="#variant.LLVM_LTO_ASM_FAILURE">LLVM_LTO_ASM_FAILURE</a><a href="#variant.LLVM_LTO_NULL_OBJECT">LLVM_LTO_NULL_OBJECT</a></div></div><p class='location'><a href='../index.html'>llvm_sys</a>::<wbr><a href='index.html'>link_time_optimizer</a></p><script>window.sidebarCurrent = {name: 'llvm_lto_status_t', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>llvm_sys</a>::<wbr><a href='index.html'>link_time_optimizer</a>::<wbr><a class="enum" href=''>llvm_lto_status_t</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/llvm_sys/link_time_optimizer.rs.html#8-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(C)]
+</div>pub enum llvm_lto_status_t {
+    LLVM_LTO_UNKNOWN,
+    LLVM_LTO_OPT_SUCCESS,
+    LLVM_LTO_READ_SUCCESS,
+    LLVM_LTO_READ_FAILURE,
+    LLVM_LTO_WRITE_FAILURE,
+    LLVM_LTO_NO_TARGET,
+    LLVM_LTO_NO_WORK,
+    LLVM_LTO_MODULE_MERGE_FAILURE,
+    LLVM_LTO_ASM_FAILURE,
+    LLVM_LTO_NULL_OBJECT,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.LLVM_LTO_UNKNOWN" class="variant small-section-header"><a href="#variant.LLVM_LTO_UNKNOWN" class="anchor field"></a><span id='LLVM_LTO_UNKNOWN.v' class='invisible'><code>LLVM_LTO_UNKNOWN</code></span></span><span id="variant.LLVM_LTO_OPT_SUCCESS" class="variant small-section-header"><a href="#variant.LLVM_LTO_OPT_SUCCESS" class="anchor field"></a><span id='LLVM_LTO_OPT_SUCCESS.v' class='invisible'><code>LLVM_LTO_OPT_SUCCESS</code></span></span><span id="variant.LLVM_LTO_READ_SUCCESS" class="variant small-section-header"><a href="#variant.LLVM_LTO_READ_SUCCESS" class="anchor field"></a><span id='LLVM_LTO_READ_SUCCESS.v' class='invisible'><code>LLVM_LTO_READ_SUCCESS</code></span></span><span id="variant.LLVM_LTO_READ_FAILURE" class="variant small-section-header"><a href="#variant.LLVM_LTO_READ_FAILURE" class="anchor field"></a><span id='LLVM_LTO_READ_FAILURE.v' class='invisible'><code>LLVM_LTO_READ_FAILURE</code></span></span><span id="variant.LLVM_LTO_WRITE_FAILURE" class="variant small-section-header"><a href="#variant.LLVM_LTO_WRITE_FAILURE" class="anchor field"></a><span id='LLVM_LTO_WRITE_FAILURE.v' class='invisible'><code>LLVM_LTO_WRITE_FAILURE</code></span></span><span id="variant.LLVM_LTO_NO_TARGET" class="variant small-section-header"><a href="#variant.LLVM_LTO_NO_TARGET" class="anchor field"></a><span id='LLVM_LTO_NO_TARGET.v' class='invisible'><code>LLVM_LTO_NO_TARGET</code></span></span><span id="variant.LLVM_LTO_NO_WORK" class="variant small-section-header"><a href="#variant.LLVM_LTO_NO_WORK" class="anchor field"></a><span id='LLVM_LTO_NO_WORK.v' class='invisible'><code>LLVM_LTO_NO_WORK</code></span></span><span id="variant.LLVM_LTO_MODULE_MERGE_FAILURE" class="variant small-section-header"><a href="#variant.LLVM_LTO_MODULE_MERGE_FAILURE" class="anchor field"></a><span id='LLVM_LTO_MODULE_MERGE_FAILURE.v' class='invisible'><code>LLVM_LTO_MODULE_MERGE_FAILURE</code></span></span><span id="variant.LLVM_LTO_ASM_FAILURE" class="variant small-section-header"><a href="#variant.LLVM_LTO_ASM_FAILURE" class="anchor field"></a><span id='LLVM_LTO_ASM_FAILURE.v' class='invisible'><code>LLVM_LTO_ASM_FAILURE</code></span></span><span id="variant.LLVM_LTO_NULL_OBJECT" class="variant small-section-header"><a href="#variant.LLVM_LTO_NULL_OBJECT" class="anchor field"></a><span id='LLVM_LTO_NULL_OBJECT.v' class='invisible'><code>LLVM_LTO_NULL_OBJECT</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "llvm_sys";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

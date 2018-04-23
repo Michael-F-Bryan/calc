@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LLVMLinkage` enum in crate `llvm_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LLVMLinkage">
+
+    <title>llvm_sys::LLVMLinkage - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../dark.css">
+    <link rel="stylesheet" type="text/css" href="../main.css" id="themeStyle">
+    <script src="../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum LLVMLinkage</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.LLVMExternalLinkage">LLVMExternalLinkage</a><a href="#variant.LLVMAvailableExternallyLinkage">LLVMAvailableExternallyLinkage</a><a href="#variant.LLVMLinkOnceAnyLinkage">LLVMLinkOnceAnyLinkage</a><a href="#variant.LLVMLinkOnceODRLinkage">LLVMLinkOnceODRLinkage</a><a href="#variant.LLVMLinkOnceODRAutoHideLinkage">LLVMLinkOnceODRAutoHideLinkage</a><a href="#variant.LLVMWeakAnyLinkage">LLVMWeakAnyLinkage</a><a href="#variant.LLVMWeakODRLinkage">LLVMWeakODRLinkage</a><a href="#variant.LLVMAppendingLinkage">LLVMAppendingLinkage</a><a href="#variant.LLVMInternalLinkage">LLVMInternalLinkage</a><a href="#variant.LLVMPrivateLinkage">LLVMPrivateLinkage</a><a href="#variant.LLVMDLLImportLinkage">LLVMDLLImportLinkage</a><a href="#variant.LLVMDLLExportLinkage">LLVMDLLExportLinkage</a><a href="#variant.LLVMExternalWeakLinkage">LLVMExternalWeakLinkage</a><a href="#variant.LLVMGhostLinkage">LLVMGhostLinkage</a><a href="#variant.LLVMCommonLinkage">LLVMCommonLinkage</a><a href="#variant.LLVMLinkerPrivateLinkage">LLVMLinkerPrivateLinkage</a><a href="#variant.LLVMLinkerPrivateWeakLinkage">LLVMLinkerPrivateWeakLinkage</a></div></div><p class='location'><a href='index.html'>llvm_sys</a></p><script>window.sidebarCurrent = {name: 'LLVMLinkage', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>llvm_sys</a>::<wbr><a class="enum" href=''>LLVMLinkage</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/llvm_sys/lib.rs.html#219-237' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(C)]
+</div>pub enum LLVMLinkage {
+    LLVMExternalLinkage,
+    LLVMAvailableExternallyLinkage,
+    LLVMLinkOnceAnyLinkage,
+    LLVMLinkOnceODRLinkage,
+    LLVMLinkOnceODRAutoHideLinkage,
+    LLVMWeakAnyLinkage,
+    LLVMWeakODRLinkage,
+    LLVMAppendingLinkage,
+    LLVMInternalLinkage,
+    LLVMPrivateLinkage,
+    LLVMDLLImportLinkage,
+    LLVMDLLExportLinkage,
+    LLVMExternalWeakLinkage,
+    LLVMGhostLinkage,
+    LLVMCommonLinkage,
+    LLVMLinkerPrivateLinkage,
+    LLVMLinkerPrivateWeakLinkage,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.LLVMExternalLinkage" class="variant small-section-header"><a href="#variant.LLVMExternalLinkage" class="anchor field"></a><span id='LLVMExternalLinkage.v' class='invisible'><code>LLVMExternalLinkage</code></span></span><span id="variant.LLVMAvailableExternallyLinkage" class="variant small-section-header"><a href="#variant.LLVMAvailableExternallyLinkage" class="anchor field"></a><span id='LLVMAvailableExternallyLinkage.v' class='invisible'><code>LLVMAvailableExternallyLinkage</code></span></span><span id="variant.LLVMLinkOnceAnyLinkage" class="variant small-section-header"><a href="#variant.LLVMLinkOnceAnyLinkage" class="anchor field"></a><span id='LLVMLinkOnceAnyLinkage.v' class='invisible'><code>LLVMLinkOnceAnyLinkage</code></span></span><span id="variant.LLVMLinkOnceODRLinkage" class="variant small-section-header"><a href="#variant.LLVMLinkOnceODRLinkage" class="anchor field"></a><span id='LLVMLinkOnceODRLinkage.v' class='invisible'><code>LLVMLinkOnceODRLinkage</code></span></span><span id="variant.LLVMLinkOnceODRAutoHideLinkage" class="variant small-section-header"><a href="#variant.LLVMLinkOnceODRAutoHideLinkage" class="anchor field"></a><span id='LLVMLinkOnceODRAutoHideLinkage.v' class='invisible'><code>LLVMLinkOnceODRAutoHideLinkage</code></span></span><span id="variant.LLVMWeakAnyLinkage" class="variant small-section-header"><a href="#variant.LLVMWeakAnyLinkage" class="anchor field"></a><span id='LLVMWeakAnyLinkage.v' class='invisible'><code>LLVMWeakAnyLinkage</code></span></span><span id="variant.LLVMWeakODRLinkage" class="variant small-section-header"><a href="#variant.LLVMWeakODRLinkage" class="anchor field"></a><span id='LLVMWeakODRLinkage.v' class='invisible'><code>LLVMWeakODRLinkage</code></span></span><span id="variant.LLVMAppendingLinkage" class="variant small-section-header"><a href="#variant.LLVMAppendingLinkage" class="anchor field"></a><span id='LLVMAppendingLinkage.v' class='invisible'><code>LLVMAppendingLinkage</code></span></span><span id="variant.LLVMInternalLinkage" class="variant small-section-header"><a href="#variant.LLVMInternalLinkage" class="anchor field"></a><span id='LLVMInternalLinkage.v' class='invisible'><code>LLVMInternalLinkage</code></span></span><span id="variant.LLVMPrivateLinkage" class="variant small-section-header"><a href="#variant.LLVMPrivateLinkage" class="anchor field"></a><span id='LLVMPrivateLinkage.v' class='invisible'><code>LLVMPrivateLinkage</code></span></span><span id="variant.LLVMDLLImportLinkage" class="variant small-section-header"><a href="#variant.LLVMDLLImportLinkage" class="anchor field"></a><span id='LLVMDLLImportLinkage.v' class='invisible'><code>LLVMDLLImportLinkage</code></span></span><span id="variant.LLVMDLLExportLinkage" class="variant small-section-header"><a href="#variant.LLVMDLLExportLinkage" class="anchor field"></a><span id='LLVMDLLExportLinkage.v' class='invisible'><code>LLVMDLLExportLinkage</code></span></span><span id="variant.LLVMExternalWeakLinkage" class="variant small-section-header"><a href="#variant.LLVMExternalWeakLinkage" class="anchor field"></a><span id='LLVMExternalWeakLinkage.v' class='invisible'><code>LLVMExternalWeakLinkage</code></span></span><span id="variant.LLVMGhostLinkage" class="variant small-section-header"><a href="#variant.LLVMGhostLinkage" class="anchor field"></a><span id='LLVMGhostLinkage.v' class='invisible'><code>LLVMGhostLinkage</code></span></span><span id="variant.LLVMCommonLinkage" class="variant small-section-header"><a href="#variant.LLVMCommonLinkage" class="anchor field"></a><span id='LLVMCommonLinkage.v' class='invisible'><code>LLVMCommonLinkage</code></span></span><span id="variant.LLVMLinkerPrivateLinkage" class="variant small-section-header"><a href="#variant.LLVMLinkerPrivateLinkage" class="anchor field"></a><span id='LLVMLinkerPrivateLinkage.v' class='invisible'><code>LLVMLinkerPrivateLinkage</code></span></span><span id="variant.LLVMLinkerPrivateWeakLinkage" class="variant small-section-header"><a href="#variant.LLVMLinkerPrivateWeakLinkage" class="anchor field"></a><span id='LLVMLinkerPrivateWeakLinkage.v' class='invisible'><code>LLVMLinkerPrivateWeakLinkage</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "llvm_sys";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

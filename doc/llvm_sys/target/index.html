@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `target` mod in crate `llvm_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, target">
+
+    <title>llvm_sys::target - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Module target</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#enums">Enums</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../index.html'>llvm_sys</a></p><script>window.sidebarCurrent = {name: 'target', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>llvm_sys</a>::<wbr><a class="mod" href=''>target</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/llvm_sys/target.rs.html#1-167' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Target information</p>
+</div><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LLVMByteOrdering.html"
+                                  title='enum llvm_sys::target::LLVMByteOrdering'>LLVMByteOrdering</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LLVMOpaqueTargetData.html"
+                                  title='enum llvm_sys::target::LLVMOpaqueTargetData'>LLVMOpaqueTargetData</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LLVMOpaqueTargetLibraryInfotData.html"
+                                  title='enum llvm_sys::target::LLVMOpaqueTargetLibraryInfotData'>LLVMOpaqueTargetLibraryInfotData</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMABIAlignmentOfType.html"
+                                  title='fn llvm_sys::target::LLVMABIAlignmentOfType'>LLVMABIAlignmentOfType</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMABISizeOfType.html"
+                                  title='fn llvm_sys::target::LLVMABISizeOfType'>LLVMABISizeOfType</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddTargetData.html"
+                                  title='fn llvm_sys::target::LLVMAddTargetData'>LLVMAddTargetData</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMAddTargetLibraryInfo.html"
+                                  title='fn llvm_sys::target::LLVMAddTargetLibraryInfo'>LLVMAddTargetLibraryInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMByteOrder.html"
+                                  title='fn llvm_sys::target::LLVMByteOrder'>LLVMByteOrder</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMCallFrameAlignmentOfType.html"
+                                  title='fn llvm_sys::target::LLVMCallFrameAlignmentOfType'>LLVMCallFrameAlignmentOfType</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMCopyStringRepOfTargetData.html"
+                                  title='fn llvm_sys::target::LLVMCopyStringRepOfTargetData'>LLVMCopyStringRepOfTargetData</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMCreateTargetData.html"
+                                  title='fn llvm_sys::target::LLVMCreateTargetData'>LLVMCreateTargetData</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMDisposeTargetData.html"
+                                  title='fn llvm_sys::target::LLVMDisposeTargetData'>LLVMDisposeTargetData</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMElementAtOffset.html"
+                                  title='fn llvm_sys::target::LLVMElementAtOffset'>LLVMElementAtOffset</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAArch64AsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAArch64AsmParser'>LLVMInitializeAArch64AsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAArch64AsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAArch64AsmPrinter'>LLVMInitializeAArch64AsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAArch64Disassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAArch64Disassembler'>LLVMInitializeAArch64Disassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAArch64Target.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAArch64Target'>LLVMInitializeAArch64Target</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAArch64TargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAArch64TargetInfo'>LLVMInitializeAArch64TargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAArch64TargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAArch64TargetMC'>LLVMInitializeAArch64TargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAMDGPUAsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAMDGPUAsmParser'>LLVMInitializeAMDGPUAsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAMDGPUAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAMDGPUAsmPrinter'>LLVMInitializeAMDGPUAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAMDGPUTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAMDGPUTarget'>LLVMInitializeAMDGPUTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAMDGPUTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAMDGPUTargetInfo'>LLVMInitializeAMDGPUTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeAMDGPUTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeAMDGPUTargetMC'>LLVMInitializeAMDGPUTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeARMAsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializeARMAsmParser'>LLVMInitializeARMAsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeARMAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeARMAsmPrinter'>LLVMInitializeARMAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeARMDisassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeARMDisassembler'>LLVMInitializeARMDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeARMTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeARMTarget'>LLVMInitializeARMTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeARMTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeARMTargetInfo'>LLVMInitializeARMTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeARMTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeARMTargetMC'>LLVMInitializeARMTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeBPFAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeBPFAsmPrinter'>LLVMInitializeBPFAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeBPFTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeBPFTarget'>LLVMInitializeBPFTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeBPFTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeBPFTargetInfo'>LLVMInitializeBPFTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeBPFTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeBPFTargetMC'>LLVMInitializeBPFTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeCppBackendTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeCppBackendTarget'>LLVMInitializeCppBackendTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeCppBackendTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeCppBackendTargetInfo'>LLVMInitializeCppBackendTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeCppBackendTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeCppBackendTargetMC'>LLVMInitializeCppBackendTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeHexagonAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeHexagonAsmPrinter'>LLVMInitializeHexagonAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeHexagonDisassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeHexagonDisassembler'>LLVMInitializeHexagonDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeHexagonTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeHexagonTarget'>LLVMInitializeHexagonTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeHexagonTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeHexagonTargetInfo'>LLVMInitializeHexagonTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeHexagonTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeHexagonTargetMC'>LLVMInitializeHexagonTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMSP430AsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMSP430AsmPrinter'>LLVMInitializeMSP430AsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMSP430Target.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMSP430Target'>LLVMInitializeMSP430Target</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMSP430TargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMSP430TargetInfo'>LLVMInitializeMSP430TargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMSP430TargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMSP430TargetMC'>LLVMInitializeMSP430TargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMipsAsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMipsAsmParser'>LLVMInitializeMipsAsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMipsAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMipsAsmPrinter'>LLVMInitializeMipsAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMipsDisassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMipsDisassembler'>LLVMInitializeMipsDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMipsTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMipsTarget'>LLVMInitializeMipsTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMipsTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMipsTargetInfo'>LLVMInitializeMipsTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeMipsTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeMipsTargetMC'>LLVMInitializeMipsTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeNVPTXAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeNVPTXAsmPrinter'>LLVMInitializeNVPTXAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeNVPTXTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeNVPTXTarget'>LLVMInitializeNVPTXTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeNVPTXTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeNVPTXTargetInfo'>LLVMInitializeNVPTXTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeNVPTXTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeNVPTXTargetMC'>LLVMInitializeNVPTXTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializePowerPCAsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializePowerPCAsmParser'>LLVMInitializePowerPCAsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializePowerPCAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializePowerPCAsmPrinter'>LLVMInitializePowerPCAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializePowerPCDisassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializePowerPCDisassembler'>LLVMInitializePowerPCDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializePowerPCTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializePowerPCTarget'>LLVMInitializePowerPCTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializePowerPCTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializePowerPCTargetInfo'>LLVMInitializePowerPCTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializePowerPCTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializePowerPCTargetMC'>LLVMInitializePowerPCTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSparcAsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSparcAsmParser'>LLVMInitializeSparcAsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSparcAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSparcAsmPrinter'>LLVMInitializeSparcAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSparcDisassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSparcDisassembler'>LLVMInitializeSparcDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSparcTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSparcTarget'>LLVMInitializeSparcTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSparcTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSparcTargetInfo'>LLVMInitializeSparcTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSparcTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSparcTargetMC'>LLVMInitializeSparcTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSystemZAsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSystemZAsmParser'>LLVMInitializeSystemZAsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSystemZAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSystemZAsmPrinter'>LLVMInitializeSystemZAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSystemZDisassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSystemZDisassembler'>LLVMInitializeSystemZDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSystemZTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSystemZTarget'>LLVMInitializeSystemZTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSystemZTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSystemZTargetInfo'>LLVMInitializeSystemZTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeSystemZTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeSystemZTargetMC'>LLVMInitializeSystemZTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeX86AsmParser.html"
+                                  title='fn llvm_sys::target::LLVMInitializeX86AsmParser'>LLVMInitializeX86AsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeX86AsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeX86AsmPrinter'>LLVMInitializeX86AsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeX86Disassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeX86Disassembler'>LLVMInitializeX86Disassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeX86Target.html"
+                                  title='fn llvm_sys::target::LLVMInitializeX86Target'>LLVMInitializeX86Target</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeX86TargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeX86TargetInfo'>LLVMInitializeX86TargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeX86TargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeX86TargetMC'>LLVMInitializeX86TargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeXCoreAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVMInitializeXCoreAsmPrinter'>LLVMInitializeXCoreAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeXCoreDisassembler.html"
+                                  title='fn llvm_sys::target::LLVMInitializeXCoreDisassembler'>LLVMInitializeXCoreDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeXCoreTarget.html"
+                                  title='fn llvm_sys::target::LLVMInitializeXCoreTarget'>LLVMInitializeXCoreTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeXCoreTargetInfo.html"
+                                  title='fn llvm_sys::target::LLVMInitializeXCoreTargetInfo'>LLVMInitializeXCoreTargetInfo</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMInitializeXCoreTargetMC.html"
+                                  title='fn llvm_sys::target::LLVMInitializeXCoreTargetMC'>LLVMInitializeXCoreTargetMC</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMIntPtrType.html"
+                                  title='fn llvm_sys::target::LLVMIntPtrType'>LLVMIntPtrType</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMIntPtrTypeForAS.html"
+                                  title='fn llvm_sys::target::LLVMIntPtrTypeForAS'>LLVMIntPtrTypeForAS</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMIntPtrTypeForASInContext.html"
+                                  title='fn llvm_sys::target::LLVMIntPtrTypeForASInContext'>LLVMIntPtrTypeForASInContext</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMIntPtrTypeInContext.html"
+                                  title='fn llvm_sys::target::LLVMIntPtrTypeInContext'>LLVMIntPtrTypeInContext</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMOffsetOfElement.html"
+                                  title='fn llvm_sys::target::LLVMOffsetOfElement'>LLVMOffsetOfElement</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMPointerSize.html"
+                                  title='fn llvm_sys::target::LLVMPointerSize'>LLVMPointerSize</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMPointerSizeForAS.html"
+                                  title='fn llvm_sys::target::LLVMPointerSizeForAS'>LLVMPointerSizeForAS</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMPreferredAlignmentOfGlobal.html"
+                                  title='fn llvm_sys::target::LLVMPreferredAlignmentOfGlobal'>LLVMPreferredAlignmentOfGlobal</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMPreferredAlignmentOfType.html"
+                                  title='fn llvm_sys::target::LLVMPreferredAlignmentOfType'>LLVMPreferredAlignmentOfType</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMSizeOfTypeInBits.html"
+                                  title='fn llvm_sys::target::LLVMSizeOfTypeInBits'>LLVMSizeOfTypeInBits</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVMStoreSizeOfType.html"
+                                  title='fn llvm_sys::target::LLVMStoreSizeOfType'>LLVMStoreSizeOfType</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeAllAsmParsers.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeAllAsmParsers'>LLVM_InitializeAllAsmParsers</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeAllAsmPrinters.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeAllAsmPrinters'>LLVM_InitializeAllAsmPrinters</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeAllDisassemblers.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeAllDisassemblers'>LLVM_InitializeAllDisassemblers</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeAllTargetInfos.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeAllTargetInfos'>LLVM_InitializeAllTargetInfos</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeAllTargetMCs.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeAllTargetMCs'>LLVM_InitializeAllTargetMCs</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeAllTargets.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeAllTargets'>LLVM_InitializeAllTargets</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeNativeAsmParser.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeNativeAsmParser'>LLVM_InitializeNativeAsmParser</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Returns 1 on failure.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeNativeAsmPrinter.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeNativeAsmPrinter'>LLVM_InitializeNativeAsmPrinter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Returns 1 on failure.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeNativeDisassembler.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeNativeDisassembler'>LLVM_InitializeNativeDisassembler</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Returns 1 on failure.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.LLVM_InitializeNativeTarget.html"
+                                  title='fn llvm_sys::target::LLVM_InitializeNativeTarget'>LLVM_InitializeNativeTarget</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Returns 1 on failure.</p>
+
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LLVMTargetDataRef.html"
+                                  title='type llvm_sys::target::LLVMTargetDataRef'>LLVMTargetDataRef</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.LLVMTargetLibraryInfoRef.html"
+                                  title='type llvm_sys::target::LLVMTargetLibraryInfoRef'>LLVMTargetLibraryInfoRef</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "llvm_sys";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

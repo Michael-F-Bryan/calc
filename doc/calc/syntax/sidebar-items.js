@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Atom","The most basic construct in the language."],["Expr","A `calc` expression."],["Op","The kind of operation in a `BinaryOp`."]],"fn":[["parse","Parse a string into its AST representation."]],"mod":[["visit","Syntax tree traversal."]],"struct":[["BinaryOp","A binary operation."],["FunctionCall","A function call."]]});

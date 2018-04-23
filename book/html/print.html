@@ -1,0 +1,839 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rusty Calc</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+    </head>
+    <body class="light">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme;
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            document.querySelector('html').classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="parse/index.html"><strong aria-hidden="true">2.</strong> Parsing</a></li><li><ol class="section"><li><a href="parse/setup.html"><strong aria-hidden="true">2.1.</strong> Setting Up The Project</a></li><li><a href="parse/grammar.html"><strong aria-hidden="true">2.2.</strong> The Language Grammar</a></li><li><a href="parse/ast.html"><strong aria-hidden="true">2.3.</strong> The Abstract Syntax Tree</a></li><li><a href="parse/write_grammar.html"><strong aria-hidden="true">2.4.</strong> Writing grammar.lalrpop</a></li><li><a href="parse/visit.html"><strong aria-hidden="true">2.5.</strong> Creating an AST Visitor</a></li></ol></li><li><a href="back/index.html"><strong aria-hidden="true">3.</strong> Converting to LLVM IR</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                        </div>
+
+                        <h1 class="menu-title">Rusty Calc</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="print.html#introduction" id="introduction"><h1>Introduction</h1></a>
+<p>This is an introduction to using LLVM and the <a href="https://github.com/TheDan64/inkwell">inkwell</a> crate to write a JIT
+compiled calculator in Rust.</p>
+<a class="header" href="print.html#roadmap" id="roadmap"><h2>Roadmap</h2></a>
+<p>By the end of this endeavour we want to have a command-line calculator which can</p>
+<ul>
+<li>Do all the basic arithmetic operations (<code>5 * (7+8)</code>)</li>
+<li>Have access to a bunch of pre-defined constants (<code>2 * PI / 3</code>)</li>
+<li>Call mathematical functions from the C math library (<code>sin(2*PI/3)</code> calls the
+<code>sin()</code> function from <code>libm</code>)</li>
+<li>Create our own variables (<code>angle = 3 * PI / 4</code>)</li>
+</ul>
+<p>If there is time we might even try to define our own functions. It'd also be
+pretty cool to compile the code as a shared library (<code>*.so</code> or DLL) so it can be
+linked into other programs.</p>
+<p>To do this, our calculator will need to run several phases</p>
+<ul>
+<li>Parse the input into its AST (<a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>) representation</li>
+<li>Use <a href="https://github.com/TheDan64/inkwell">inkwell</a> to turn this AST into a LLVM <a href="http://llvm.org/doxygen/classllvm_1_1Module.html#details">Module</a> (a single unit of
+compilation in LLVM) and define a top level <code>calc_main()</code> function</li>
+<li>JIT compile this <code>Module</code></li>
+<li>Call the <code>calc_main</code> (possibly passing in arguments) and print out the result</li>
+</ul>
+<p>For simplicity of implementation, the only data type our language will know
+about is the <code>double</code> (a 64-bit floating point number).</p>
+<a class="header" href="print.html#parsing" id="parsing"><h1>Parsing</h1></a>
+<p>The first step in creating our calculator is turning a stream of text provided
+by the user into something more computer-friendly. This structure is usually
+referred to as an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> and is essentially just a tree where
+each leaf node is an &quot;atom&quot; (the smallest possible construct in a language,
+usually constants or identifiers). All non-leaf nodes then correspond to the
+compound constructs such as binary operators or function calls.</p>
+<p>To make things easier we'll be using <a href="https://github.com/lalrpop/lalrpop">lalrpop</a> to generate our parsing code and
+construct the AST. If you've never heard of <code>lalrpop</code> I <em>highly recommend</em> you
+check out <a href="http://lalrpop.github.io/lalrpop/README.html">their guide</a>.</p>
+<a class="header" href="print.html#setting-up-lalrpop" id="setting-up-lalrpop"><h1>Setting Up Lalrpop</h1></a>
+<p>To use <code>lalrpop</code> we'll need to add it to our dependencies and set up the build
+script. While we're at it, lets also make sure we've added <code>inkwell</code> and
+<code>failure</code> as dependencies (for LLVM bindings and error handling respectively).</p>
+<p>First lets create a new cargo project. We'll structure it as a main <code>calc</code> crate
+with a small binary that just parses the command line arguments and sets
+everything up before calling into the central crate to run everything.</p>
+<pre><code>$ cargo new calc
+</code></pre>
+<p>Then update <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml"># Cargo.toml
+
+[package]
+name = &quot;calc&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;Michael Bryan &lt;michaelfbryan@gmail.com&gt;&quot;]
+build = &quot;build.rs&quot;
+
+[dependencies]
+inkwell = { git = &quot;https://github.com/TheDan64/inkwell&quot;, features = [&quot;llvm3-7&quot;] }
+failure = &quot;0.1.1&quot;
+lalrpop-util = &quot;0.14.0&quot;
+regex = &quot;0.2.7&quot;
+
+[build-dependencies]
+lalrpop = &quot;0.14.0&quot;
+</code></pre>
+<p>And the build script:</p>
+<pre><pre class="playpen"><code class="language-rust">// build.rs
+
+extern crate lalrpop;
+
+fn main() {
+    lalrpop::process_root().unwrap();
+}
+</code></pre></pre>
+<p>With the lalrpop build system set up we can lay out the crate's skeleton.
+It's usually a good idea to break each phase of a compiler (because that's what
+we're effectively making) out into their own modules, so here's the tentative
+directory structure:</p>
+<ul>
+<li>/
+<ul>
+<li>bin/
+<ul>
+<li>yalc.rs</li>
+</ul>
+</li>
+<li>src/
+<ul>
+<li>lib.rs</li>
+<li>syntax/
+<ul>
+<li>mod.rs</li>
+<li>ast.rs</li>
+<li>grammar.lalrpop</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>At the moment, we've stubbed out the rust files with a bunch of <code>extern crate</code>
+and <code>mod</code> statements.</p>
+<a class="header" href="print.html#the-language-grammar" id="the-language-grammar"><h1>The Language Grammar</h1></a>
+<p>Now we've got a lot of the boilerplate set up, we can start trying to figure out
+what our language's grammar should look like.</p>
+<p>The easiest way to do this is by writing out a bunch of example use cases.</p>
+<pre><code class="language-text"># This is a comment
+5 * (3+4)  # You can do the usual arithmetic stuff
+x = 3*PI/4  # and read/write variables
+y = sin(x)^2 # plus call functions
+</code></pre>
+<p>While this language won't be turing complete (we don't have conditionals or
+loops), it should be a fairly decent calculator.</p>
+<p>Once you have several examples the next step is to formalize the language
+grammar to make it easier to parse. This is usually done by writing a bunch of
+&quot;rules&quot; in [Backus-Naur Form][bnf].</p>
+<pre><code class="language-ebnf">expr := &lt;term&gt;
+      | &quot;(&quot; &lt;expr&gt; &quot;)&quot;
+      | &lt;function-call&gt;
+term := &lt;factor&gt;
+      | &lt;term&gt; &quot;+&quot; &lt;term&gt;
+      | &lt;term&gt; &quot;-&quot; &lt;term&gt;
+factor := NUMBER
+        | IDENTIFIER
+        | &lt;factor&gt; &quot;*&quot; &lt;factor&gt;
+        | &lt;factor&gt; &quot;/&quot; &lt;factor&gt;
+function-call := IDENTIFIER &quot;(&quot; &lt;arg-list&gt; &quot;)&quot;
+arg-list := EPSILON
+          | &lt;expr&gt; (&quot;,&quot; &lt;expr&gt;)*
+</code></pre>
+<p>To put it in human terms, we would read the first rule as saying &quot;an <em>expr</em>
+is either a <em>term</em>, an <em>expr</em> surrounded by parentheses, or a <em>function
+call</em>&quot;.</p>
+<a class="header" href="print.html#the-ast" id="the-ast"><h1>The AST</h1></a>
+<p>Now we have an idea of the language's syntax and the various elements in it,
+we can define an Abstract Syntax Tree for it.</p>
+<p>At the very bottom of the tree is the <code>Atom</code>. This is either a number literal or
+an identifier.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[derive(Debug, Clone, PartialEq)]
+pub enum Atom {
+    Number(f64),
+    Ident(String),
+}
+#}</code></pre></pre>
+<p>To make constructing an <code>Atom</code> easier, you probably want to implement <code>From&lt;T&gt;</code>
+for <code>f64</code>, <code>String</code>, and <code>&amp;'a str</code>.</p>
+<p>Next up is the <code>BinaryOp</code>. This is just a container which holds its left and
+right arguments, plus the operation that was used.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[derive(Debug, Clone, PartialEq)]
+pub struct BinaryOp {
+    pub op: Op,
+    pub left: Expr,
+    pub right: Expr,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq)]
+pub enum Op {
+    Add,
+    Divide,
+    Multiply,
+    Subtract,
+}
+#}</code></pre></pre>
+<p>If you were paying attention, you will have seen that the type of a <code>BinaryOp</code>'s
+<code>left</code> operand is <code>Expr</code>. This will be our language's top-level construct and is
+implemented as a simple enum.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[derive(Debug, Clone, PartialEq)]
+pub enum Expr {
+    FunctionCall(FunctionCall),
+    Atom(Atom),
+    BinaryOp(Box&lt;BinaryOp&gt;),
+}
+#}</code></pre></pre>
+<p>The last thing we need to define is a <code>FunctionCall</code>. This is just a thing that
+has a name and a bunch of arguments.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[derive(Debug, Clone, PartialEq)]
+pub struct FunctionCall {
+    pub name: String,
+    pub arguments: Vec&lt;Expr&gt;,
+}
+#}</code></pre></pre>
+<p>It is recommended to sprinkle the <code>ast</code> module with implementations of <code>From</code> or
+similar constructors/helper functions to make working with an AST and creation
+easier.</p>
+<blockquote>
+<p><strong>Note:</strong> Assignment nodes have been left as an exercise for the reader.
+They're not overly difficult to add to the language, in fact, there's a way to
+add them without needing to define any new types.</p>
+</blockquote>
+<a class="header" href="print.html#writing-grammarlalrpop" id="writing-grammarlalrpop"><h1>Writing <code>grammar.lalrpop</code></h1></a>
+<p>Now we've got some types to work with we can write a grammar which <code>lalrpop</code>
+will use when generating the parser.</p>
+<p>The top of the <code>grammar.lalrpop</code> will be inserted into the generated file as-is,
+making it the perfect place to insert the import statements we'll need.</p>
+<p>At the moment we only need to put a single line here.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use syntax::ast::{Expr, Atom, BinaryOp, FunctionCall};
+#}</code></pre></pre>
+<p>Next we tell <code>lalrpop</code> that the grammar section has started</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+grammar;
+#}</code></pre></pre>
+<p>Our grammar is composed of <em>expressions</em> which are built up from a bunch of
+<em>factors</em> and <em>terms</em>. This lets us quite naturally break the grammar up into
+three rules.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+
+#fn main() {
+pub Expr: Expr = {
+    &lt;l:Expr&gt; &quot;+&quot; &lt;r:Factor&gt; =&gt; BinaryOp::add(l, r).into(),
+    &lt;l:Expr&gt; &quot;-&quot; &lt;r:Factor&gt; =&gt; BinaryOp::sub(l, r).into(),
+    Factor,
+};
+
+Factor: Expr = {
+    &lt;l:Factor&gt; &quot;*&quot; &lt;r:Term&gt; =&gt; BinaryOp::mult(l, r).into(),
+    &lt;l:Factor&gt; &quot;/&quot; &lt;r:Term&gt; =&gt; BinaryOp::div(l, r).into(),
+    Term,
+};
+
+Term: Expr = {
+    &quot;(&quot; &lt;e:Expr&gt; &quot;)&quot; =&gt; e,
+    Atom =&gt; Expr::Atom(&lt;&gt;),
+    &lt;f:FunctionCall&gt; =&gt; f.into(),
+};
+#}</code></pre></pre>
+<p>There's also the rule for function calls:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub FunctionCall: FunctionCall = {
+    &lt;i:ident&gt; &quot;(&quot; &lt;a:CommaSeparated&lt;Expr&gt;&gt; &quot;)&quot; =&gt; FunctionCall::new(i, a),
+};
+
+CommaSeparated&lt;T&gt;: Vec&lt;T&gt; = { 
+    &lt;v:(&lt;T&gt; &quot;,&quot;)*&gt; &lt;e:T?&gt; =&gt; match e {
+        None =&gt; v,
+        Some(e) =&gt; {
+            let mut v = v;
+            v.push(e);
+            v
+        }
+    }
+};
+#}</code></pre></pre>
+<p>And finally, we define the rules for parsing an <code>Atom</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub Atom: Atom = {
+    num =&gt; Atom::Number(&lt;&gt;),
+  ident =&gt; Atom::Ident(&lt;&gt;),
+};
+
+num: f64 = {
+  &lt;s:r&quot;[0-9]+(\.[0-9]+)?&quot;&gt; =&gt; s.parse().unwrap(),
+};
+
+ident: String = {
+  &lt;i:r&quot;[a-zA-Z][a-zA-Z0-9_-]*&quot;&gt; =&gt; i.to_string(),
+};
+#}</code></pre></pre>
+<p>As a sanity check, we should add some tests to make sure the language's
+grammar parses correctly.</p>
+<p>First up, we'll test for parsing atoms.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+fn parse_a_number_atom() {
+    let src = &quot;3.14&quot;;
+    let should_be = Atom::Number(3.14);
+
+    let got = grammar::parse_Atom(src).unwrap();
+    assert_eq!(got, should_be);
+}
+
+#[test]
+fn parse_an_identifier() {
+    let src = &quot;x&quot;;
+    let should_be = Atom::Ident(String::from(src));
+
+    let got = grammar::parse_Atom(src).unwrap();
+    assert_eq!(got, should_be);
+}
+#}</code></pre></pre>
+<p>Then a binary op,</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+fn parse_a_multiply() {
+    let src = &quot;a * 5&quot;;
+    let should_be = BinaryOp::mult(Atom::Ident(String::from(&quot;a&quot;)).into(), Atom::Number(5.0).into());
+    let should_be = Expr::from(should_be);
+
+    let got = grammar::parse_Expr(src).unwrap();
+    assert_eq!(got, should_be);
+}
+#}</code></pre></pre>
+<p>And we should also add a test for function calls.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+fn parse_a_function_call() {
+    let src = &quot;sin(90.0)&quot;;
+    let should_be = FunctionCall::new(&quot;sin&quot;, vec![Expr::Atom(Atom::Number(90.0))]);
+
+    let got = grammar::parse_FunctionCall(src).unwrap();
+    assert_eq!(got, should_be);
+}
+#}</code></pre></pre>
+<p>So far our tests have checked individual grammar rules in isolation. To ensure
+operator precedence is encoded correctly in the language's grammar we'll need to
+create a non-trivial example and make sure it gives us <em>exactly</em> the parse tree
+we'd expect.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+fn complex_parse_tree() {
+    let src = &quot;5 + (3-2) * x - sin(90.0)&quot;;
+    let should_be = BinaryOp::sub(
+        BinaryOp::add(Atom::from(5).into(),
+            BinaryOp::mult(
+                BinaryOp::sub(Atom::from(3).into(), Atom::from(2).into()).into(),
+                Atom::from(&quot;x&quot;).into(),
+            ).into()).into(),
+            FunctionCall::new(&quot;sin&quot;, vec![Atom::Number(90.0).into()]).into()
+    );
+    let should_be = Expr::from(should_be);
+
+    let got = grammar::parse_Expr(src).unwrap();
+
+    assert_eq!(got, should_be);
+}
+#}</code></pre></pre>
+<a class="header" href="print.html#creating-an-ast-visitor" id="creating-an-ast-visitor"><h1>Creating an AST Visitor</h1></a>
+<p>Now that we can parse source code into an AST we need a mechanism for traversing
+the tree. The way this is commonly done in Rust is by defining a <code>Visitor</code> trait
+which, by default, will recursively walk the tree.</p>
+<p>A good example of this is <a href="https://docs.rs/syn/0.12.14/syn/visit/trait.Visit.html"><code>syn::visit::Visit</code></a>.</p>
+<a class="header" href="print.html#the-visitor-trait" id="the-visitor-trait"><h2>The Visitor Trait</h2></a>
+<p>Our AST is nowhere near as complex as the Rust AST, so we shouldn't require
+as many methods as <code>syn</code>'s <code>Visit</code> trait.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub trait Visitor {
+    fn visit_expr(&amp;mut self, e: &amp;Expr) {
+        walk_expr(self, e);
+    }
+
+    fn visit_binary_op(&amp;mut self, b: &amp;BinaryOp) {
+        walk_binary_op(self, b);
+    }
+
+    fn visit_function_call(&amp;mut self, f: &amp;FunctionCall) {
+        walk_function_call(self, f);
+    }
+
+    fn visit_atom(&amp;mut self, atom: &amp;Atom) {}
+}
+#}</code></pre></pre>
+<p>We also define several <code>walk_*()</code> functions that will allow the <code>Visitor</code> to
+recursively visit each node in the tree using the default traversal order. By
+making them <code>pub</code> we allow users to use them to continue walking the tree when
+they've done something at a particular node.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub fn walk_expr&lt;V: Visitor + ?Sized&gt;(visitor: &amp;mut V, e: &amp;Expr) {
+    match *e {
+        Expr::Atom(ref a) =&gt; visitor.visit_atom(a),
+        _ =&gt; unimplemented!()
+    }
+}
+
+pub fn walk_binary_op&lt;V: Visitor + ?Sized&gt;(visitor: &amp;mut V, b: &amp;BinaryOp) {
+    visitor.visit_expr(&amp;b.left);
+    visitor.visit_expr(&amp;b.right);
+}
+
+pub fn walk_function_call&lt;V: Visitor + ?Sized&gt;(visitor: &amp;mut V, f: &amp;FunctionCall) {
+    for arg in &amp;f.arguments {
+        visitor.visit_expr(arg);
+    }
+}
+#}</code></pre></pre>
+<p>Don't forget to update <code>mod.rs</code> so this <code>visit</code> module is included in the crate.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// src/syntax/mod.rs
+
+mod ast;
+mod grammar;
+pub mod visit;
+
+pub use self::ast::*;
+#}</code></pre></pre>
+<a class="header" href="print.html#converting-to-llvm-ir" id="converting-to-llvm-ir"><h1>Converting to LLVM IR</h1></a>
+<p>Now we've got a more computer-friendly representation of our program we need
+to convert it to LLVM's Intermediate Representation. This IR can come in several
+forms, a human-readable &quot;assembly&quot;, a compiled bitcode, or an in-memory tree of
+objects (similar to our current AST).</p>
+<p>LLVM uses the <a href="http://llvm.org/doxygen/classllvm_1_1Module.html#details"><code>Module</code></a> as its base compilation unit (think of it as a single
+<code>*.c</code> file), with a <code>Module</code> containing several functions, datatypes, constants,
+or global variables.</p>
+<p>Because our simple calculator doesn't allow you to declare functions, we're
+going to throw everything into one big main function with the signature
+<code>fn calc_main() -&gt; f64</code>. This way when we JIT compile the program we can call
+into the <code>calc_main()</code> function to execute everything. It also means it's quite
+trivial to compile the program into a shared library (<code>*.so</code> or DLL) so other
+programs can call it.</p>
+<p>This conversion process is done by recursively walking the parsed AST, turning
+each node into the corresponding LLVM instruction(s).</p>
+<p>Later on, the <code>Visitor</code> trait will be used to do some minor type-checking by
+looking for variables uses/assignments and function calls.</p>
+<a class="header" href="print.html#the-compiler-struct" id="the-compiler-struct"><h2>The Compiler Struct</h2></a>
+<p>LLVM uses a <code>Context</code> for the various internal states and variables involved
+during the compilation process, which we'll encapsulate in a <code>Compiler</code> struct.</p>
+<p>The <code>Compiler</code> will hold an IR <code>Builder</code> and a cached LLVM <code>FloatType</code>
+representing a <code>double</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct Compiler&lt;'ctx&gt; {
+    ctx: &amp;'ctx Context,
+    logger: Logger,
+    builder: Builder,
+    double: FloatType,
+}
+#}</code></pre></pre>
+<p>The constructor for <code>Compiler</code> isn't overly exciting:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl&lt;'ctx&gt; Compiler&lt;'ctx&gt; {
+    pub fn new(ctx: &amp;'ctx Context) -&gt; Compiler&lt;'ctx&gt; {
+        Compiler::new_with_logger(ctx, &amp;Logger::root(Discard, o!()))
+    }
+
+    pub fn new_with_logger(ctx: &amp;'ctx Context, logger: &amp;Logger) -&gt; Compiler&lt;'ctx&gt; {
+        let logger = logger.new(o!(&quot;phase&quot; =&gt; &quot;trans&quot;));
+
+        let double = ctx.f64_type();
+
+        let builder = ctx.create_builder();
+
+        Compiler {
+            ctx,
+            builder,
+            logger,
+            double,
+        }
+    }
+}
+#}</code></pre></pre>
+<a class="header" href="print.html#super-basic-compilation" id="super-basic-compilation"><h2>Super Basic Compilation</h2></a>
+<p>The compilation process is actually quite simple. We take in an AST and
+recursively visit each node, generating the corresponding LLVM IR. To begin
+with, we'll hard-code the module to be <code>&quot;calc&quot;</code> and compile our one and only
+function.</p>
+<p>For this first pass we're going to take several short-cuts (noticeable by the
+use of <code>unimplemented!()</code>) so we can get the initial compiler working.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+    /// Compile an AST tree to a LLVM `Module`.
+    pub fn compile(&amp;self, ast: &amp;Expr) -&gt; Module {
+        const CALC_ENTRYPOINT: &amp;'static str = &quot;calc_main&quot;;
+
+        let mut module = self.ctx.create_module(&quot;calc&quot;);
+
+        self.compile_function(&amp;mut module, CALC_ENTRYPOINT, ast);
+
+        module
+    }
+#}</code></pre></pre>
+<p>In LLVM, you create a function by first declaring its signature, then add one or
+more basic blocks (contiguous set of instructions without any branching or
+jumps). The entry point of every function is typically named <code>&quot;entry&quot;</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+    fn compile_function(&amp;self, module: &amp;mut Module, name: &amp;str, body: &amp;Expr) -&gt; FunctionValue {
+        // hard-code all functions to be `fn() -&gt; f64`
+        let sig = self.double.fn_type(&amp;[], false);
+        let func = module.add_function(name, &amp;sig, None);
+
+        let entry = func.append_basic_block(&quot;entry&quot;);
+        self.builder.position_at_end(&amp;entry);
+
+        let ret = self.compile_expr(body);
+
+        self.builder.build_return(Some(&amp;ret));
+
+        func
+    }
+#}</code></pre></pre>
+<p>Compiling an <code>Expr</code> is just a case of <code>match</code>ing on the type of expression and
+calling the corresponding <code>compile_*()</code> method.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+    fn compile_expr(&amp;self, expr: &amp;Expr) -&gt; FloatValue {
+        match *expr {
+            Expr::Atom(ref atom) =&gt; self.compile_atom(atom),
+            Expr::BinaryOp(ref op) =&gt; self.compile_binary_op(op),
+            Expr::FunctionCall(ref call) =&gt; self.compile_function_call(call),
+        }
+    }
+#}</code></pre></pre>
+<p>We're not going to worry about variables just yet, so compiling atoms is just
+a case of emitting a constant.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+    fn compile_atom(&amp;self, atom: &amp;Atom) -&gt; FloatValue {
+        match *atom {
+            Atom::Number(n) =&gt; self.double.const_float(n),
+            _ =&gt; unimplemented!(),
+        }
+    }
+#}</code></pre></pre>
+<p>Compiling a binary op is also fairly straightforward, we need to <code>match</code> on the
+type of operation and then use the <code>Builder</code>'s <code>build_float_*()</code> methods to
+emit the corresponding LLVM IR.</p>
+<p>There's a little twist to this step though. In order to compile a binary
+operation we need to give LLVM its two operands. This means we'll need to
+recursively call <code>compile_expr()</code> on <code>op.left</code> and <code>op.right</code> before the <code>match</code>
+bit.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+    fn compile_binary_op(&amp;self, op: &amp;BinaryOp) -&gt; FloatValue {
+        let left = self.compile_expr(&amp;op.left);
+        let right = self.compile_expr(&amp;op.right);
+
+        match op.op {
+            Op::Add =&gt; self.builder.build_float_add(&amp;left, &amp;right, &quot;add&quot;),
+            Op::Subtract =&gt; self.builder.build_float_sub(&amp;left, &amp;right, &quot;sub&quot;),
+            Op::Multiply =&gt; self.builder.build_float_mul(&amp;left, &amp;right, &quot;mul&quot;),
+            Op::Divide =&gt; self.builder.build_float_div(&amp;left, &amp;right, &quot;div&quot;),
+        }
+    }
+#}</code></pre></pre>
+<p>Compiling function calls requires us to do a type-checking pass beforehand, if
+you skip type-checking there's a good chance someone will use the wrong number
+of parameters and leave the world in an inconsistent state (usually resulting in
+a segfault).</p>
+<p>Type-checking and symbol table generation will be done in a later chapter, so we
+can leave it <code>unimplemented!()</code> for now.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+    fn compile_function_call(&amp;self, call: &amp;FunctionCall) -&gt; FloatValue {
+        unimplemented!()
+    }
+#}</code></pre></pre>
+<a class="header" href="print.html#testing-the-code-generation" id="testing-the-code-generation"><h2>Testing The Code Generation</h2></a>
+<p>So far we can support binary operations and <code>double</code> constants. It's not overly
+much, but our <code>calc</code> tool can already do everything a normal desk calculator
+can. We just need to ask LLVM to JIT-compile and execute our code.</p>
+<p>Once we've parsed the source text into an AST, the JIT-compilation process
+consists of:</p>
+<ul>
+<li>Initialize a <code>Target</code></li>
+<li>Create an LLVM <code>Context</code></li>
+<li>Compile the AST into a <code>Module</code></li>
+<li>Create a JIT execution engine based on the module</li>
+<li>Get a pointer to the JIT-compiled <code>calc_main</code> function</li>
+<li>Run it</li>
+</ul>
+<p>While this may sound long and compilicated, it's maybe a dozen lines and one
+<code>unsafe</code> block at most.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub type CalcMain = unsafe extern &quot;C&quot; fn() -&gt; f64;
+
+fn execute(src: &amp;str) -&gt; Result&lt;f64, Error&gt; {
+    Target::initialize_native(&amp;InitializationConfig::default())?;
+
+    let ast = ::syntax::parse(src)?;
+    let ctx = Context::create();
+    let module = Compiler::new(&amp;ctx).compile(&amp;ast);
+
+    let ee = module
+        .create_jit_execution_engine(OptimizationLevel::None)?;
+
+    unsafe {
+        let calc_main = ee.get_function::&lt;CalcMain&gt;(&quot;calc_main&quot;)?;
+
+        Ok(calc_main())
+    }
+}
+#}</code></pre></pre>
+<p>While it's not 100% production-ready yet, we can use the above <code>execute()</code>
+function to start testing some basic inputs.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[test]
+fn execute_some_binary_ops() {
+    let inputs = vec![
+        (&quot;1+1&quot;, 2.0),
+        (&quot;1-1&quot;, 0.0),
+        (&quot;2*4.5&quot;, 9.0),
+        (&quot;100.0/3&quot;, 100.0 / 3.0),
+    ];
+
+    for (src, should_be) in inputs {
+        let got = execute(src).unwrap();
+        assert_eq!(got, should_be);
+    }
+}
+
+#[test]
+fn execute_a_more_complex_statement() {
+    let src = &quot;5 * (100 + 3) / 9 - 2.5&quot;;
+    let should_be = 5.0 * (100.0 + 3.0) / 9.0 - 2.5;
+
+    let got = execute(src).unwrap();
+    assert_eq!(got, should_be);
+}
+#}</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if (getComputedStyle(document.querySelector(".fa")).fontFamily !== "FontAwesome") {
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '_FontAwesome/css/font-awesome.css';
+                document.head.insertBefore(link, document.head.firstChild)
+            }
+        </script>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script>
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-78714693-2', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                window.print();
+            })
+        </script>
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </body>
+</html>

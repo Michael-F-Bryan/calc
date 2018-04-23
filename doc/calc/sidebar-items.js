@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["syntax","The language's parser and AST representation."],["trans","Generate LLVM IR for a valid `calc` expression."]]});

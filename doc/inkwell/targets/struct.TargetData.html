@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TargetData` struct in crate `inkwell`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TargetData">
+
+    <title>inkwell::targets::TargetData - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct TargetData</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.int_ptr_type">int_ptr_type</a><a href="#method.int_ptr_type_for_as">int_ptr_type_for_as</a><a href="#method.int_ptr_type_in_context">int_ptr_type_in_context</a><a href="#method.int_ptr_type_for_as_in_context">int_ptr_type_for_as_in_context</a><a href="#method.get_data_layout">get_data_layout</a><a href="#method.get_bit_size">get_bit_size</a><a href="#method.create">create</a><a href="#method.add_target_data">add_target_data</a><a href="#method.get_byte_ordering">get_byte_ordering</a><a href="#method.get_pointer_byte_size">get_pointer_byte_size</a><a href="#method.get_pointer_byte_size_for_as">get_pointer_byte_size_for_as</a><a href="#method.get_store_size">get_store_size</a><a href="#method.get_abi_size">get_abi_size</a><a href="#method.get_abi_alignment">get_abi_alignment</a><a href="#method.get_call_frame_alignment">get_call_frame_alignment</a><a href="#method.get_preferred_alignment">get_preferred_alignment</a><a href="#method.get_preferred_alignment_of_global">get_preferred_alignment_of_global</a><a href="#method.element_at_offset">element_at_offset</a><a href="#method.offset_of_element">offset_of_element</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Eq">Eq</a><a href="#impl-Debug">Debug</a><a href="#impl-Drop">Drop</a></div></div><p class='location'><a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>targets</a></p><script>window.sidebarCurrent = {name: 'TargetData', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>inkwell</a>::<wbr><a href='index.html'>targets</a>::<wbr><a class="struct" href=''>TargetData</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/inkwell/targets.rs.html#825-827' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TargetData { /* fields omitted */ }</pre>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#829-976' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.int_ptr_type' class="method"><span id='int_ptr_type.v' class='invisible'><code>pub fn <a href='#method.int_ptr_type' class='fnname'>int_ptr_type</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/types/struct.PointerType.html" title="struct inkwell::types::PointerType">PointerType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#838-844' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.int_ptr_type_for_as' class="method"><span id='int_ptr_type_for_as.v' class='invisible'><code>pub fn <a href='#method.int_ptr_type_for_as' class='fnname'>int_ptr_type_for_as</a>(&amp;self, as_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="struct" href="../../inkwell/types/struct.PointerType.html" title="struct inkwell::types::PointerType">PointerType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#846-852' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.int_ptr_type_in_context' class="method"><span id='int_ptr_type_in_context.v' class='invisible'><code>pub fn <a href='#method.int_ptr_type_in_context' class='fnname'>int_ptr_type_in_context</a>(&amp;self, context: &amp;<a class="struct" href="../../inkwell/context/struct.Context.html" title="struct inkwell::context::Context">Context</a>) -&gt; <a class="struct" href="../../inkwell/types/struct.PointerType.html" title="struct inkwell::types::PointerType">PointerType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#854-860' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.int_ptr_type_for_as_in_context' class="method"><span id='int_ptr_type_for_as_in_context.v' class='invisible'><code>pub fn <a href='#method.int_ptr_type_for_as_in_context' class='fnname'>int_ptr_type_for_as_in_context</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../inkwell/context/struct.Context.html" title="struct inkwell::context::Context">Context</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;as_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; <a class="struct" href="../../inkwell/types/struct.PointerType.html" title="struct inkwell::types::PointerType">PointerType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#862-868' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_data_layout' class="method"><span id='get_data_layout.v' class='invisible'><code>pub fn <a href='#method.get_data_layout' class='fnname'>get_data_layout</a>(&amp;self) -&gt; <a class="struct" href="../../inkwell/data_layout/struct.DataLayout.html" title="struct inkwell::data_layout::DataLayout">DataLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#870-876' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_bit_size' class="method"><span id='get_bit_size.v' class='invisible'><code>pub fn <a href='#method.get_bit_size' class='fnname'>get_bit_size</a>(&amp;self, type_: &amp;<a class="trait" href="../../inkwell/types/trait.AnyType.html" title="trait inkwell::types::AnyType">AnyType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#879-883' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.create' class="method"><span id='create.v' class='invisible'><code>pub fn <a href='#method.create' class='fnname'>create</a>(str_repr: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#885-893' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.add_target_data' class="method"><span id='add_target_data.v' class='invisible'><code>pub fn <a href='#method.add_target_data' class='fnname'>add_target_data</a>(&amp;self, pass_manager: &amp;<a class="struct" href="../../inkwell/passes/struct.PassManager.html" title="struct inkwell::passes::PassManager">PassManager</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#896-900' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_byte_ordering' class="method"><span id='get_byte_ordering.v' class='invisible'><code>pub fn <a href='#method.get_byte_ordering' class='fnname'>get_byte_ordering</a>(&amp;self) -&gt; <a class="enum" href="../../inkwell/targets/enum.ByteOrdering.html" title="enum inkwell::targets::ByteOrdering">ByteOrdering</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#902-911' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_pointer_byte_size' class="method"><span id='get_pointer_byte_size.v' class='invisible'><code>pub fn <a href='#method.get_pointer_byte_size' class='fnname'>get_pointer_byte_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#913-917' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_pointer_byte_size_for_as' class="method"><span id='get_pointer_byte_size_for_as.v' class='invisible'><code>pub fn <a href='#method.get_pointer_byte_size_for_as' class='fnname'>get_pointer_byte_size_for_as</a>(&amp;self, as_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#919-923' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_store_size' class="method"><span id='get_store_size.v' class='invisible'><code>pub fn <a href='#method.get_store_size' class='fnname'>get_store_size</a>(&amp;self, type_: &amp;<a class="trait" href="../../inkwell/types/trait.AnyType.html" title="trait inkwell::types::AnyType">AnyType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#925-929' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_abi_size' class="method"><span id='get_abi_size.v' class='invisible'><code>pub fn <a href='#method.get_abi_size' class='fnname'>get_abi_size</a>(&amp;self, type_: &amp;<a class="trait" href="../../inkwell/types/trait.AnyType.html" title="trait inkwell::types::AnyType">AnyType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#931-935' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_abi_alignment' class="method"><span id='get_abi_alignment.v' class='invisible'><code>pub fn <a href='#method.get_abi_alignment' class='fnname'>get_abi_alignment</a>(&amp;self, type_: &amp;<a class="trait" href="../../inkwell/types/trait.AnyType.html" title="trait inkwell::types::AnyType">AnyType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#937-941' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_call_frame_alignment' class="method"><span id='get_call_frame_alignment.v' class='invisible'><code>pub fn <a href='#method.get_call_frame_alignment' class='fnname'>get_call_frame_alignment</a>(&amp;self, type_: &amp;<a class="trait" href="../../inkwell/types/trait.AnyType.html" title="trait inkwell::types::AnyType">AnyType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#943-947' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_preferred_alignment' class="method"><span id='get_preferred_alignment.v' class='invisible'><code>pub fn <a href='#method.get_preferred_alignment' class='fnname'>get_preferred_alignment</a>(&amp;self, type_: &amp;<a class="trait" href="../../inkwell/types/trait.AnyType.html" title="trait inkwell::types::AnyType">AnyType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#949-953' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_preferred_alignment_of_global' class="method"><span id='get_preferred_alignment_of_global.v' class='invisible'><code>pub fn <a href='#method.get_preferred_alignment_of_global' class='fnname'>get_preferred_alignment_of_global</a>(&amp;self, value: &amp;<a class="struct" href="../../inkwell/values/struct.GlobalValue.html" title="struct inkwell::values::GlobalValue">GlobalValue</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#955-959' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.element_at_offset' class="method"><span id='element_at_offset.v' class='invisible'><code>pub fn <a href='#method.element_at_offset' class='fnname'>element_at_offset</a>(&amp;self, struct_type: &amp;<a class="struct" href="../../inkwell/types/struct.StructType.html" title="struct inkwell::types::StructType">StructType</a>, offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#961-965' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.offset_of_element' class="method"><span id='offset_of_element.v' class='invisible'><code>pub fn <a href='#method.offset_of_element' class='fnname'>offset_of_element</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;struct_type: &amp;<a class="struct" href="../../inkwell/types/struct.StructType.html" title="struct inkwell::types::StructType">StructType</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;element: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#967-975' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#824' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#824' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#824' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#824' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#824' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#824' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Drop' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html" title="trait core::ops::drop::Drop">Drop</a> for <a class="struct" href="../../inkwell/targets/struct.TargetData.html" title="struct inkwell::targets::TargetData">TargetData</a></code><a href='#impl-Drop' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#979-985' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class="method"><span id='drop.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/inkwell/targets.rs.html#980-984' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the destructor for this type. <a href="https://doc.rust-lang.org/nightly/core/ops/drop/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "inkwell";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
